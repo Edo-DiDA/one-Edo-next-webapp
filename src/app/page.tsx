@@ -1,7 +1,10 @@
 "use client";
 
+import ChevronUp from "@/assets/vectors/ChevronUp";
 import Image from "next/image";
 import { useState } from "react";
+import NewsCard from "./_components/NewsCard";
+import ServiceAccordion from "./_components/ServiceAccordion";
 import Tags from "./_components/Tags";
 
 const Home = () => {
@@ -21,7 +24,12 @@ const Home = () => {
           className="cursor-pointer"
         />
       </div>
-      <div className="h-[452px] px-4 pt-[24px] bg-neutral-800 w-full">
+      <div className="w-full h-[46px] bg-neutral-900 flex items-center pl-4">
+        <p className="text-white text-xxs font-light">
+          News updates for residents to access
+        </p>
+      </div>
+      <div className="min-h-[304px] px-4 pt-[24px] bg-neutral-800 w-full">
         <p className="text-md text-neutral-50 font-bold mb-2">
           Access ALL government services in Edo State
         </p>
@@ -64,7 +72,7 @@ const Home = () => {
         )}
 
         <div
-          className="cursor-pointer flex flex-row items-center"
+          className="cursor-pointer pb-[40px] flex flex-row items-center"
           onClick={toogleTags}
           role="button"
         >
@@ -74,6 +82,47 @@ const Home = () => {
           <Image src="/chevronUp.svg" alt="Chevron Up" height={20} width={20} />
         </div>
       </div>
+
+      <div className="h-[84px] items-center flex w-full overflow-x-auto bg-neutral-900 px-4">
+        <ul className="flex align-center space-x-[24px] whitespace-nowrap">
+          <li className="w-[200px] h-[52px] mr-[24px] bg-white rounded" />
+          <li className="w-[200px] h-[52px] mr-[24px] bg-white rounded" />
+        </ul>
+      </div>
+
+      <div className="min-h-[394px] bg-white px-[16px] py-[24px] border border-button-primary">
+        <div className="text-black font-medium text-xrs">POPULAR SERVICES</div>
+
+        <div className="mt-[8px]">
+          <ServiceAccordion title="Financial Assistance" />
+          <ServiceAccordion title="Social Services and Welfare" />
+          <ServiceAccordion title="Employment" />
+          <ServiceAccordion title="Business Services" />
+          <ServiceAccordion title="Citizens Rights and Processes" />
+        </div>
+      </div>
+
+      <div className="w-full h-[264px] mt-[24px] pt-[24px] border border-black">
+        <p className="ml-4 text-xrs text-black font-medium">LATEST UPDATES</p>
+
+        <div className="mt-[24px] overflow-x-auto pl-4">
+          <div className="flex space-x-4 whitespace-nowrap">
+            <NewsCard
+              title="Edo State Govt giving jobs to people living with disabilities"
+              body="The Minister of Social Development and Gender issues announced
+                  on Monday 4th..."
+            />
+
+            <NewsCard
+              title="Edo State Govt giving jobs to people living with disabilities"
+              body="The Minister of Social Development and Gender issues announced
+                  on Monday 4th..."
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="h-[142px] w-full bg-button-background-dark" />
     </div>
   );
 };

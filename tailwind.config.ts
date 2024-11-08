@@ -16,12 +16,21 @@ const config: Config = {
         neutral: {
           50: "#FAFAFA",
           100: "#F4F4F4",
+          200: "#DEDEDE",
           700: "#595959",
           800: "#393939",
           900: "#222222",
         },
         button: {
           primary: "#275A41",
+          background: {
+            dark: "#08120D",
+          },
+        },
+        text: {
+          primary: {
+            light: "#16261D",
+          },
         },
       },
       fontFamily: {
@@ -34,11 +43,16 @@ const config: Config = {
         xbold: "700",
       },
       fontSize: {
+        xrs: ["0.75rem", { lineHeight: "1.125rem" }],
+        xxs: ["0.875rem", { lineHeight: "1.375rem" }],
         xs: ["1rem", { lineHeight: "1.5rem" }],
         sm: ["1.125rem", { lineHeight: "1.75rem" }],
         md: ["1.5rem", { lineHeight: "1.75rem" }],
         lg: ["1.25rem", { lineHeight: "1.5rem" }],
         xl: ["3rem", { lineHeight: "3.625rem" }],
+      },
+      boxShadow: {
+        news: "0px 1px 2px 0px rgba(0, 0, 0, 0.10)",
       },
     },
   },
