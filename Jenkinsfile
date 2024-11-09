@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{
-                    docker.withRegistry('https://242201278106.dkr.ecr.eu-north-1.amazonaws.com/oneedo/app', 'aws-cred') {
+                    docker.withRegistry('https://242201278106.dkr.ecr.eu-north-1.amazonaws.com', 'ecr:eu-north-1:aws-cred') {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("oneedoweb:latest")
                     }
