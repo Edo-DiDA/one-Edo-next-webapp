@@ -6,7 +6,7 @@ pipeline {
         ECR_REPOSITORY = 'oneedo' 
         AWS_ACCOUNT_ID = '242201278106'
         IMAGE_TAG = 'oneedoweb'
-        EC2_HOST = '13.247.95.4'
+        EC2_HOST = '13.247.95.48'
         APP_PORT = '3000' 
         SSH_USER = 'ubuntu'
     }
