@@ -41,10 +41,8 @@ pipeline {
 
         stage('Deploy to EC2') {
             steps {
-                echo 'Deploying application to EC2...'
-                script {
-                    sshagent(credentials: ['ssh-credentials-1']) {
-                        sh """
+                sshagent(credentials: ['ssh-credentials-1']) {
+                    sh """
                         ssh -o StrictHostKeyChecking=no ${SSH_USER}@${EC2_HOST} << EOF
                             # Authenticate Docker with ECR on the EC2 instance
                             aws ecr get-login-password --region ${AWS_REGION} | \
@@ -60,8 +58,7 @@ pipeline {
                             # Run the new container
                             docker run -d --name ${IMAGE_TAG} -p ${APP_PORT}:${APP_PORT} ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPOSITORY}:${IMAGE_TAG}
                         EOF
-                        """
-                    }
+                    """
                 }
             }
         }
