@@ -12,7 +12,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 script{
-                    app = docker.build("one-edo-web")
+                    app = docker.build("oneedoweb")
                 }
             }
         }
