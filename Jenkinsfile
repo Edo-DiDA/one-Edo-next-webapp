@@ -12,7 +12,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 script{
-                    app = docker.build("oneedoweb")
+                    app = docker.build("oneedo")
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
                 script{
                     docker.withRegistry('https://242201278106.dkr.ecr.eu-north-1.amazonaws.com', 'ecr:eu-north-1:aws-cred') {
                         app.push("${env.BUILD_NUMBER}")
-                        app.push("oneedoweb:latest")
+                        app.push("oneedoweb")
                     }
                 }
             }
