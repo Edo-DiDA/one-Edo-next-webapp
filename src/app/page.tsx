@@ -1,23 +1,22 @@
-"use client";
-
-import ChevronUp from "@/assets/vectors/ChevronUp";
+import {
+  Banknote,
+  CourseUp,
+  Gavel,
+  HandHeart,
+  MoneyBag,
+} from "@/assets/vectors";
 import Image from "next/image";
-import { useState } from "react";
-import NewsCard from "./_components/NewsCard";
-import ServiceAccordion from "./_components/ServiceAccordion";
-import Tags from "./_components/Tags";
+import NewsCard from "../components/utilities/news-card";
+import ServiceAccordion from "../components/utilities/service-accordion";
+import Tags from "../components/utilities/tags";
 
 const Home = () => {
-  const [showTags, setShowTags] = useState<boolean>(true);
-
-  const toogleTags = () => setShowTags(!showTags);
-
   return (
     <div>
       <div className="py-[26px] pl-4 pr-[28px] flex-row w-full flex justify-between items-center">
         <p className="font-bold text-black text-md">oneEdo</p>
         <Image
-          src={"/HamburgerMenu.svg"}
+          src={"/hamburger-menu.svg"}
           alt="hambuger menu"
           height={24}
           width={24}
@@ -54,7 +53,7 @@ const Home = () => {
 
           <button className="h-[44px] w-[44px] justify-self-end bg-button-primary rounded flex items-center justify-center ">
             <Image
-              src="/arrowRight.svg"
+              src="/arrow-right.svg"
               alt="arrow right icon"
               height={20}
               width={20}
@@ -62,25 +61,7 @@ const Home = () => {
           </button>
         </div>
 
-        {showTags && (
-          <div className="mb-[40px]">
-            <Tags> Money for my business</Tags>
-            <Tags>Internet</Tags>
-            <Tags>I need a job</Tags>
-            <Tags>I have a disability</Tags>
-          </div>
-        )}
-
-        <div
-          className="cursor-pointer pb-[40px] flex flex-row items-center"
-          onClick={toogleTags}
-          role="button"
-        >
-          <p className="underline text-neutral-100 font-light text-xs mr-[8px]">
-            {showTags ? "Hide" : "Show"} suggestions
-          </p>
-          <Image src="/chevronUp.svg" alt="Chevron Up" height={20} width={20} />
-        </div>
+        <Tags />
       </div>
 
       <div className="h-[84px] items-center flex w-full overflow-x-auto bg-neutral-900 px-4">
@@ -90,19 +71,25 @@ const Home = () => {
         </ul>
       </div>
 
-      <div className="min-h-[394px] bg-white px-[16px] py-[24px] border border-button-primary">
+      <div className="min-h-[394px] bg-white px-[16px] pt-[24px]">
         <div className="text-black font-medium text-xrs">POPULAR SERVICES</div>
 
         <div className="mt-[8px]">
-          <ServiceAccordion title="Financial Assistance" />
-          <ServiceAccordion title="Social Services and Welfare" />
-          <ServiceAccordion title="Employment" />
-          <ServiceAccordion title="Business Services" />
-          <ServiceAccordion title="Citizens Rights and Processes" />
+          <ServiceAccordion icon={<Banknote />} title="Financial Assistance" />
+          <ServiceAccordion
+            icon={<HandHeart />}
+            title="Social Services and Welfare"
+          />
+          <ServiceAccordion icon={<MoneyBag />} title="Employment" />
+          <ServiceAccordion icon={<CourseUp />} title="Business Services" />
+          <ServiceAccordion
+            icon={<Gavel />}
+            title="Citizens Rights and Processes"
+          />
         </div>
       </div>
 
-      <div className="w-full h-[264px] mt-[24px] pt-[24px] border border-black">
+      <div className="w-full">
         <p className="ml-4 text-xrs text-black font-medium">LATEST UPDATES</p>
 
         <div className="mt-[24px] overflow-x-auto pl-4">
@@ -122,7 +109,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="h-[142px] w-full bg-button-background-dark" />
+      <div className="h-[142px] w-full bg-primary-900" />
     </div>
   );
 };

@@ -1,11 +1,9 @@
-import Image from "next/image";
-
-interface Props {
+interface ITagProps {
   action?: () => void;
   children: string;
 }
 
-const Tags: React.FC<Props> = ({ action, children }) => {
+const Tag = ({ action, children }: ITagProps) => {
   return (
     <button
       onClick={action}
@@ -16,4 +14,4 @@ const Tags: React.FC<Props> = ({ action, children }) => {
   );
 };
 
-export default Tags;
+export default Tag;

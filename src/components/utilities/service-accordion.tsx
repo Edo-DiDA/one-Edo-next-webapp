@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 
-import ChevronUp from "@/assets/vectors/ChevronUp";
+import { AltArrowDown, ChevronUp } from "@/assets/vectors";
 
-interface Props {
+interface IServiceAccordionProps {
   title: string;
+  icon: React.ReactElement;
 }
 
-const ServiceAccordion: React.FC<Props> = ({ title }) => {
+const ServiceAccordion = ({ title, icon }: IServiceAccordionProps) => {
   const [showDetails, setShowDetails] = useState<boolean>(false);
 
   const toogleTags = () => setShowDetails(!showDetails);
@@ -45,34 +46,37 @@ const ServiceAccordion: React.FC<Props> = ({ title }) => {
       >
         <div className="flex flex-row h-[48px] items-center justify-between">
           <div className="flex flex-row items-center">
-            <ChevronUp fill="#16261D" />
+            {icon}
             <p className="text-xxs font-lighttext-text-primary-light ml-[12px]">
               {title}
             </p>
           </div>
           <div>
-            <ChevronUp fill="#16261D" />
+            {showDetails ? (
+              <ChevronUp className="text-black" />
+            ) : (
+              <AltArrowDown />
+            )}
           </div>
         </div>
-
-        {showDetails && (
-          <div>
-            <ul className="my-[16px]">
-              {services.map(({ label, link }, index) => (
-                <li className="mb-[16px]" key={index}>
-                  <a
-                    href={link}
-                    className="underline text-xxs text-button-primary font-medium mb-[16px]"
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <div className="h-[16px]" />
-          </div>
-        )}
       </div>
+      {showDetails && (
+        <div className="pl-4">
+          <ul className="my-[16px]">
+            {services.map(({ label, link }, index) => (
+              <li className="mb-[16px]" key={index}>
+                <a
+                  href={link}
+                  className="underline text-xxs text-primary-500 font-medium mb-[16px]"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="h-[16px]" />
+        </div>
+      )}
     </div>
   );
 };
