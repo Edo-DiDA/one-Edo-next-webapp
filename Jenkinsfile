@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AWS_REGION = 'af-south-1' 
-        ECR_REPOSITORY = 'oneedo' 
+        ECR_REPOSITORY = 'edo-prototype-default' 
         AWS_ACCOUNT_ID = '879210190257'
         IMAGE_TAG = 'oneedoweb'
         EC2_HOST = '13.247.120.237'
