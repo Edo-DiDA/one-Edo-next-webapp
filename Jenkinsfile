@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     environment {
-        AWS_REGION = 'eu-north-1' 
+        AWS_REGION = 'af-south-1' 
         ECR_REPOSITORY = 'oneedo' 
-        AWS_ACCOUNT_ID = '242201278106'
+        AWS_ACCOUNT_ID = '879210190257'
         IMAGE_TAG = 'oneedoweb'
-        EC2_HOST = '13.247.95.48'
+        EC2_HOST = '13.247.120.237'
         APP_PORT = '3000' 
         SSH_USER = 'ubuntu'
     }
@@ -23,7 +23,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 script{
-                    app = docker.build("${ECR_REPOSITORY}")
+                    app = docker.build("${ECR_REPOSITORY}:${IMAGE_TAG}")
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{
-                    docker.withRegistry("https://${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com", "ecr:${AWS_REGION}:aws-cred") {
+                    docker.withRegistry("https://${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com") {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("${IMAGE_TAG}")
                     }
@@ -44,10 +44,6 @@ pipeline {
                 sshagent(credentials: ['ssh-credentials-1']) {
                     sh """
                         ssh -o StrictHostKeyChecking=no ${SSH_USER}@${EC2_HOST} << EOF
-                            # Authenticate Docker with ECR on the EC2 instance
-                            aws ecr get-login-password --region ${AWS_REGION} | \
-                            docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com
-
                             # Pull the latest image
                             docker pull ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPOSITORY}:${IMAGE_TAG}
 
