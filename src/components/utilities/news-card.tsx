@@ -8,7 +8,7 @@ interface INewsCardProps {
 
 const NewsCard = ({ title, body }: INewsCardProps) => {
   return (
-    <div className="shadow h-[174px] w-[306px] mr-4 mb-[24px] rounded-lg p-[12px] flex-shrink-0">
+    <div className="shadow h-[174px] w-[306px]  mr-4 mb-[24px] rounded-lg p-[12px] flex-shrink-0">
       <p className="text-xs text-neutral-800 leading-6 font-medium mb-1 whitespace-normal break-words min-w-0">
         {title}
       </p>
