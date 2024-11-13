@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 import { AltArrowDown, ArrowRightGreen, ChevronUp } from "@/assets/vectors";
 
 interface IServiceAccordionProps {
