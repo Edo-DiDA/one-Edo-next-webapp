@@ -9,6 +9,7 @@ type ButtonProps = {
   rightIcon?: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  children?: React.ReactNode;
 };
 
 const Button = ({
@@ -19,6 +20,7 @@ const Button = ({
   leftIcon,
   rightIcon,
   className = "",
+  children,
   onClick,
 }: ButtonProps) => {
   const baseStyles =
@@ -77,6 +79,7 @@ const Button = ({
             <span className={`mr-2 ${iconSizeClasses[size]}`}>{leftIcon}</span>
           )}
           <span>{text}</span>
+          {children && <div> {children}</div>}
           {rightIcon && (
             <span className={`ml-2 ${iconSizeClasses[size]}`}>{rightIcon}</span>
           )}

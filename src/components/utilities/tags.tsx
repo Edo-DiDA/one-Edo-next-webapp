@@ -28,7 +28,7 @@ const Tags = () => {
       )}
 
       <div
-        className="cursor-pointer pb-[40px] flex flex-row items-center"
+        className="md:hidden cursor-pointer pb-[40px] flex flex-row items-center"
         onClick={toogleTags}
         role="button"
       >

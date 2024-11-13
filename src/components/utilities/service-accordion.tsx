@@ -2,18 +2,21 @@
 
 import { useState } from "react";
 
-import { AltArrowDown, ChevronUp } from "@/assets/vectors";
+import { AltArrowDown, ArrowRightGreen, ChevronUp } from "@/assets/vectors";
 
 interface IServiceAccordionProps {
   title: string;
   icon: React.ReactElement;
+  onClick: () => void;
+  showDetails: boolean;
 }
 
-const ServiceAccordion = ({ title, icon }: IServiceAccordionProps) => {
-  const [showDetails, setShowDetails] = useState<boolean>(false);
-
-  const toogleTags = () => setShowDetails(!showDetails);
-
+const ServiceAccordion = ({
+  title,
+  icon,
+  showDetails,
+  onClick,
+}: IServiceAccordionProps) => {
   const services: { label: string; link: string }[] = [
     {
       label: "I need money for my business",
@@ -38,30 +41,37 @@ const ServiceAccordion = ({ title, icon }: IServiceAccordionProps) => {
   ];
 
   return (
-    <div className="mt-[16px]">
+    <div className="">
       <div
-        className="w-full pl-4 pr-[12px] cursor-pointer min-h-[48px] bg-neutral-200 rounded"
+        className="w-[100%] pl-4 pr-[12px] cursor-pointer min-h-[48px] bg-neutral-200 md:bg-white rounded"
         role="button"
-        onClick={toogleTags}
+        onClick={onClick}
       >
-        <div className="flex flex-row h-[48px] items-center justify-between">
+        <div
+          className={`flex flex-row h-[48px] items-center justify-between pl-4 ${
+            showDetails ? "bg-neutral-200" : " "
+          }`}
+        >
           <div className="flex flex-row items-center">
             {icon}
-            <p className="text-xxs font-lighttext-text-primary-light ml-[12px]">
+            <p className="text-xxs font-light text-primary-light ml-[12px]">
               {title}
             </p>
           </div>
-          <div>
+          <div className="md:hidden">
             {showDetails ? (
               <ChevronUp className="text-black" />
             ) : (
               <AltArrowDown />
             )}
           </div>
+          <div className="hidden md:block">
+            {showDetails ? <></> : <ArrowRightGreen />}
+          </div>
         </div>
       </div>
       {showDetails && (
-        <div className="pl-4">
+        <div className="md:hidden pl-4">
           <ul className="my-[16px]">
             {services.map(({ label, link }, index) => (
               <li className="mb-[16px]" key={index}>
