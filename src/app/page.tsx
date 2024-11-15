@@ -32,7 +32,7 @@ const Home = () => {
             </p>
           </div>
           <div className="flex flex-row w-[90%] md:w-fit bg-neutral-100 h-[48px] items-center justify-between pr-[2px] rounded overflow-hidden mb-[40px] mx-4">
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center pl-2">
               <Search />
               <input
                 className="bg-neutral-100 h-full md:w-[300px]"
@@ -56,11 +56,11 @@ const Home = () => {
           <Tags />
         </div>
       </div>
-      <div className="h-[84px]   align-middle w-full  bg-neutral-900 px-4">
+      <div className="h-[84px] md:h-[94px]   align-middle w-full  bg-neutral-900 px-4">
         <ul className="flex  items-center space-x-[24px] whitespace-nowrap">
-          <li className="w-[200px] md:w-[30%] h-[52px] mr-[24px] mt-3 bg-white rounded" />
-          <li className="w-[200px] md:w-[30%] h-[52px] mr-[24px] mt-3 bg-white rounded" />
-          <li className="hidden md:block w-[30%] h-[52px] mr-[24px] mt-3 bg-white rounded" />
+          <li className="w-[200px] md:w-[30%] h-[52px] md:h-[70px] mr-[24px] mt-3 bg-white rounded" />
+          <li className="w-[200px] md:w-[30%] h-[52px] md:h-[70px] mr-[24px] mt-3 bg-white rounded" />
+          <li className="hidden md:block w-[30%] h-[52px] md:h-[70px] mr-[24px] mt-3 bg-white rounded" />
         </ul>
       </div>
       <div className="min-h-[394px] bg-white px-[16px] pt-[24px] md:px-20 md:py-10">

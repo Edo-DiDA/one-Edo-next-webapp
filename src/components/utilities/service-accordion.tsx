@@ -47,7 +47,7 @@ const ServiceAccordion = ({
       >
         <div
           className={`flex flex-row h-[48px] items-center justify-between pl-4 ${
-            showDetails ? "bg-neutral-200" : " "
+            showDetails ? "bg-neutral-200 rounded-lg" : " "
           }`}
         >
           <div className="flex flex-row items-center">
