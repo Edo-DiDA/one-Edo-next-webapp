@@ -6,7 +6,7 @@ pipeline {
         ECR_REPOSITORY = 'edo-prototype-default' 
         AWS_ACCOUNT_ID = '879210190257'
         IMAGE_TAG = 'oneedoweb'
-        EC2_HOST = '13.247.120.237'
+        EC2_HOST = '13.245.51.240'
         APP_PORT = '3000' 
         SSH_USER = 'ubuntu'
     }
