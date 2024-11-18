@@ -1,10 +1,17 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
+
 import Button from "../utilities/button";
 import { Search } from "@/assets/vectors";
+import { useBreakpoint } from "@/lib/hooks/useBreakpoint";
 
-const Header = () => {
+type HeaderProps = {
+  showSearch?: boolean;
+};
+
+const Header = ({ showSearch = true }: HeaderProps) => {
+  const isMobile = useBreakpoint();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -14,7 +21,7 @@ const Header = () => {
           Services
         </Link>
       </div>
-      <span className="font-bold text-xl">oneEdo</span>
+      <span className="font-bold text-md md:text-xl">oneEdo</span>
       <div className="hidden md:flex space-x-20">
         <Link href="#archives" className="hover:underline">
           Archives
@@ -24,11 +31,14 @@ const Header = () => {
         </Link>
       </div>
       <div className="md:hidden flex items-center gap-5">
-        <div className="flex-grow flex justify-center">
-          <Search />
-        </div>
+        {showSearch && (
+          <div className="flex-grow flex justify-center">
+            <Search />
+          </div>
+        )}
         <Button
-          className=" focus:outline-none"
+          size={isMobile ? "small" : "large"}
+          className="focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           text="Menu"
         />
@@ -43,6 +53,9 @@ const Header = () => {
               </a>
               <a href="#contacts" className="hover:underline">
                 Contacts
+              </a>
+              <a href="/work" className="hover:underline">
+                Work
               </a>
             </nav>
           </div>

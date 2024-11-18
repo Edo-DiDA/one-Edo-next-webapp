@@ -6,6 +6,7 @@ import HandHeart from "./HandHeart.svg";
 import ChevronUp from "./ChevronUp.svg";
 import AltArrowDown from "./AltArrowDown.svg";
 import Search from "./Magnifer.svg";
+import ChevronRight from "./ChevronRight.svg";
 import ArrowRightGreen from "./ArrowRightGreen.svg";
 import ArrowRightWhite from "./ArrowRightWhite.svg";
 import ArrowLeftGreen from "./ArrowLeftGreen.svg";
@@ -19,7 +20,8 @@ export {
   ChevronUp,
   AltArrowDown,
   Search,
+  ChevronRight,
   ArrowRightGreen,
   ArrowRightWhite,
-  ArrowLeftGreen
+  ArrowLeftGreen,
 };
