@@ -41,7 +41,7 @@ const ServiceAccordion = ({
   return (
     <div className="">
       <div
-        className="w-[100%] pl-4 pr-[12px] cursor-pointer min-h-[48px] bg-neutral-200 md:bg-white rounded"
+        className="w-[100%] sm:pl-4 pr-[12px] cursor-pointer min-h-[48px] bg-neutral-200 md:bg-white rounded"
         role="button"
         onClick={onClick}
       >

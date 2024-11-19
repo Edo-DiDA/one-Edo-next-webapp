@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import Tag from "./tag";
-import { ChevronUp } from "@/assets/vectors";
+import { ChevronDownWhite, ChevronUp } from "@/assets/vectors";
 
 const tags: string[] = [
   "Money for my business",
@@ -35,7 +35,7 @@ const Tags = () => {
         <p className="underline text-neutral-100 font-light text-xs mr-[8px]">
           {showTags ? "Hide" : "Show"} suggestions
         </p>
-        <ChevronUp />
+        {showTags ? <ChevronDownWhite /> : <ChevronUp />}
       </div>
     </div>
   );
