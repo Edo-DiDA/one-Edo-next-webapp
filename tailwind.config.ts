@@ -84,6 +84,9 @@ const config: Config = {
           800: "#6D0D0D",
           900: "#311606",
         },
+        secondary: {
+          500: "#505A5F",
+        },
       },
     },
     plugins: [],

@@ -6,9 +6,12 @@ import HandHeart from "./HandHeart.svg";
 import ChevronUp from "./ChevronUp.svg";
 import AltArrowDown from "./AltArrowDown.svg";
 import Search from "./Magnifer.svg";
+import Hambuger from "./Hambuger.svg";
+import ChevronRight from "./ChevronRight.svg";
 import ArrowRightGreen from "./ArrowRightGreen.svg";
 import ArrowRightWhite from "./ArrowRightWhite.svg";
 import ArrowLeftGreen from "./ArrowLeftGreen.svg";
+import ChevronDownWhite from "./ChevronDownWhite.svg";
 
 export {
   Gavel,
@@ -19,7 +22,10 @@ export {
   ChevronUp,
   AltArrowDown,
   Search,
+  ChevronRight,
+  Hambuger,
   ArrowRightGreen,
   ArrowRightWhite,
-  ArrowLeftGreen
+  ArrowLeftGreen,
+  ChevronDownWhite,
 };

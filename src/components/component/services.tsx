@@ -9,7 +9,7 @@ import {
   MoneyBag,
 } from "@/assets/vectors";
 
-function Services() {
+const Services = () => {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
 
   const services = [
@@ -79,6 +79,6 @@ function Services() {
       </div>
     </div>
   );
-}
+};
 
 export default Services;
