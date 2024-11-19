@@ -4,7 +4,6 @@ type TopSectionProps = {
 };
 
 const TopSection = ({ title, body }: TopSectionProps) => {
-  const crumbs = ["Home", "Work", "Starting a business"];
   return (
     <div className="h-[124px] p-4">
       <h2 className="text-md text-primary-800 font-bold">{title}</h2>
