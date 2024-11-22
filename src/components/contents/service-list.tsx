@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { RefernceInfo } from "@/types/content";
+import { SubmenuType } from "@/types/content";
 import { ArrowRightGreen } from "@/assets/vectors";
-import { Url } from "next/dist/shared/lib/router/router";
 
 type ServiceListProp = {
-  services: RefernceInfo[];
+  services: SubmenuType[];
 };
 
 const ServiceList = ({ services }: ServiceListProp) => {
@@ -13,16 +12,18 @@ const ServiceList = ({ services }: ServiceListProp) => {
       <h4 className="text-black font-medium text-xrs pb-6">POPULAR SERVICES</h4>
 
       <div className="flex flex-row flex-wrap -mb-4 -mr-4">
-        {services.map(({ title, body, link = "/" }, index) => (
+        {services.map(({ page, __component }, index) => (
           <Link
-            href={link as Url}
+            href={`/${page?.slug}`}
             key={index}
             className="h-[208px] rounded mb-4 bg-primary-50 w-[45%] mr-4 p-4 flex flex-col justify-between"
           >
             <div>
-              <h6 className="text-sm font-medium text-primary-800">{title}</h6>
+              <h6 className="text-sm font-medium text-primary-800">
+                {page?.name}
+              </h6>
               <p className="pt-1 text-secondary-500 text-xs font-light">
-                {body}
+                {page?.description}
               </p>
             </div>
             <div className="flex self-end">

@@ -1,14 +1,20 @@
-import { SuggestionInfo } from "@/types/content";
+"use client";
+
+import { PopularSuggestionType, SuggestionInfo } from "@/types/content";
 
 type SuggestionsProp = {
   title?: string;
+  showNew?: boolean;
   showTitle?: boolean;
   suggestions: SuggestionInfo[];
+  items?: PopularSuggestionType[];
 };
 
 const Suggestions = ({
+  items,
   suggestions,
   showTitle = true,
+  showNew = false,
   title = "Popular suggestions",
 }: SuggestionsProp) => {
   return (
@@ -17,15 +23,25 @@ const Suggestions = ({
         <h6 className="text-xs mb-3 text-white font-light">{title}</h6>
       )}
       <div className="flex flex-row flex-wrap -mr-3">
-        {suggestions.map(({ name, action }, index) => (
-          <button
-            key={index}
-            onClick={action}
-            className="h-[40px] rounded bg-primary-700 px-3 text-neutral-50 mr-3 mb-3"
-          >
-            {name}
-          </button>
-        ))}
+        {showNew && items
+          ? items.map(({ page }, index) => (
+              <button
+                key={index}
+                onClick={() => {}}
+                className="h-[40px] rounded bg-primary-700 px-3 text-neutral-50 mr-3 mb-3 truncate"
+              >
+                {page?.title}
+              </button>
+            ))
+          : suggestions.map(({ name, action }, index) => (
+              <button
+                key={index}
+                onClick={action}
+                className="h-[40px] rounded bg-primary-700 px-3 text-neutral-50 mr-3 mb-3"
+              >
+                {name}
+              </button>
+            ))}
       </div>
     </div>
   );

@@ -8,3 +8,64 @@ export type RefernceInfo = {
   body?: string;
   link?: string;
 };
+
+// APIs
+
+type PageType = {
+  id: number;
+  documentId: string;
+  name: string;
+  slug: string;
+  description?: string | null;
+};
+
+export type SubmenuType = {
+  __component: string;
+  id: number;
+  page?: PageType;
+  article?: {
+    id: number;
+    documentId: string;
+    title: string;
+    description?: string | null;
+    slug: string;
+  };
+};
+
+type BreadcrumbType = {
+  id: number;
+  page: PageType;
+};
+
+export type PopularSuggestionType = {
+  id: number;
+  title: string;
+  page: {
+    id: number;
+    documentId: string;
+    title: string;
+    slug: string;
+  };
+};
+
+export type ContentType = {
+  id: number;
+  documentId: string;
+  name: string;
+  slug: string;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  icon: string;
+  featured: boolean;
+  shortDescription?: string | null;
+  submenus: SubmenuType[];
+  breadcrumbs: BreadcrumbType[];
+  popularsuggestion: PopularSuggestionType[];
+};
+
+type ApiResponseType = {
+  data: ContentType;
+  meta: Record<string, unknown>;
+};
