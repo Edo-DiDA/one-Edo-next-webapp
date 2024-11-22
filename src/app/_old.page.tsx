@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div>
       <div className="sm:py-[26px] sm:pl-4 sm:pr-[28px]">
-        <Header showHambuger />
+        <Header />
       </div>
       <div className="w-full h-[46px] bg-neutral-900 flex items-center pl-4">
         <p className="text-white text-xxs font-light">
