@@ -12,7 +12,7 @@ const ServiceList = ({ services }: ServiceListProp) => {
       <h4 className="text-black font-medium text-xrs pb-6">POPULAR SERVICES</h4>
 
       <div className="flex flex-row flex-wrap -mb-4 -mr-4">
-        {services.map(({ page, __component }, index) => (
+        {services.map(({ page }, index) => (
           <Link
             href={`/${page?.slug}`}
             key={index}

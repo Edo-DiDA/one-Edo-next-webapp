@@ -64,8 +64,3 @@ export type ContentType = {
   breadcrumbs: BreadcrumbType[];
   popularsuggestion: PopularSuggestionType[];
 };
-
-type ApiResponseType = {
-  data: ContentType;
-  meta: Record<string, unknown>;
-};
