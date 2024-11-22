@@ -2,17 +2,21 @@ import { SuggestionInfo } from "@/types/content";
 
 type SuggestionsProp = {
   title?: string;
+  showTitle?: boolean;
   suggestions: SuggestionInfo[];
 };
 
 const Suggestions = ({
-  title = "Popular suggestions",
   suggestions,
+  showTitle = true,
+  title = "Popular suggestions",
 }: SuggestionsProp) => {
   return (
     <div className="min-h-[160px] p-4 bg-primary-800">
-      <h6 className="text-xs text-white font-light">{title}</h6>
-      <div className="flex flex-row mt-3 flex-wrap -mr-3">
+      {showTitle && (
+        <h6 className="text-xs mb-3 text-white font-light">{title}</h6>
+      )}
+      <div className="flex flex-row flex-wrap -mr-3">
         {suggestions.map(({ name, action }, index) => (
           <button
             key={index}

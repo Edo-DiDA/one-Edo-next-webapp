@@ -9,7 +9,7 @@ const ContentLayout = ({ children }: ContentLayoutProp) => {
   return (
     <div>
       <Header showSearch={false} />
-      <div className="h-[64px] px-4 py-2">
+      <div className="h-[64px] px-4 py-2 border-b-[1px] border-neutral-200">
         <div className="bg-neutral-100 flex flex-row w-full h-full items-center rounded pl-3">
           <Search />
           <input
