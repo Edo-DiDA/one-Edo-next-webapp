@@ -23,7 +23,7 @@ const ServiceList = ({ services }: ServiceListProp) => {
                 {page?.name}
               </h6>
               <p className="pt-1 text-secondary-500 text-xs font-light">
-                {page?.description}
+                {page?.shortDescription}
               </p>
             </div>
             <div className="flex self-end">

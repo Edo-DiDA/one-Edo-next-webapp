@@ -16,6 +16,7 @@ type PageType = {
   documentId: string;
   name: string;
   slug: string;
+  shortDescription?: string;
   description?: string | null;
 };
 
