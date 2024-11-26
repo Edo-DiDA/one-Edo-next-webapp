@@ -19,11 +19,11 @@ const Suggestions = ({
   const config = getSuggestionConfig();
 
   return (
-    <div className={`min-h-[160px] p-4 ${config[pageType].bg}`}>
+    <div className={`h-auto p-4 ${config[pageType].bg}`}>
       {showTitle && (
         <h6 className={`mb-3 ${config[pageType].title}`}>{title}</h6>
       )}
-      <div className="flex flex-row flex-wrap -mr-3">
+      <div className="flex flex-row flex-wrap -mb-3 -mr-3">
         {items?.map(({ title }, index) => (
           <button
             key={index}

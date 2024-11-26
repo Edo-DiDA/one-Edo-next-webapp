@@ -22,6 +22,6 @@ export const getTopSectionConfig = () => ({
   home: {
     title: "text-neutral-50",
     bg: "bg-primary-600",
-    little: "text-neutral-200",
+    little: "text-neutral-100",
   },
 });

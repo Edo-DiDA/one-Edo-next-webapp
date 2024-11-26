@@ -87,7 +87,7 @@ const config: Config = {
         secondary: {
           500: "#505A5F",
         },
-        "search-rgba": "rgba(255, 255, 255, 0.20)",
+        "top-search": "#4C6D5D",
       },
     },
     plugins: [],
