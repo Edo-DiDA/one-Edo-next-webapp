@@ -33,7 +33,7 @@ export type SubmenuType = {
   };
 };
 
-type BreadcrumbType = {
+export type BreadcrumbType = {
   id: number;
   page: PageType;
 };

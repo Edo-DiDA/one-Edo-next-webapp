@@ -15,7 +15,7 @@ const Home = async () => {
         title={content?.description}
         body={content?.shortDescription || ""}
       />
-      <Suggestions showNew={true} items={content?.popularsuggestion} />
+      <Suggestions items={content?.popularsuggestion} />
       <ServiceList services={content?.submenus} />
     </ContentLayout>
   );
