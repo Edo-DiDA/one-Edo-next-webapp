@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { ChevronRight } from "@/assets/vectors";
 import { BreadcrumbType } from "@/types/content";
+import { isNotLastOnList } from "@/lib/functions";
 
 type BreadcrumbsProps = {
   items: BreadcrumbType[];
@@ -18,12 +19,12 @@ const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
                 key={id}
                 href={`/${page?.slug}`}
                 className={`text-xxs text-${
-                  index === 0 ? "primary" : "secondary"
+                  isNotLastOnList(index, items.length) ? "primary" : "secondary"
                 }-500 font-light`}
               >
                 {page?.name}
               </Link>
-              {index < items.length - 1 && <ChevronRight />}
+              {isNotLastOnList(index, items.length) && <ChevronRight />}
             </>
           ))}
       </div>

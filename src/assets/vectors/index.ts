@@ -12,6 +12,7 @@ import ArrowRightGreen from "./ArrowRightGreen.svg";
 import ArrowRightWhite from "./ArrowRightWhite.svg";
 import ArrowLeftGreen from "./ArrowLeftGreen.svg";
 import ChevronDownWhite from "./ChevronDownWhite.svg";
+import WhiteMagLens from "./WhiteMagLens.svg";
 
 export {
   Gavel,
@@ -28,4 +29,5 @@ export {
   ArrowRightWhite,
   ArrowLeftGreen,
   ChevronDownWhite,
+  WhiteMagLens,
 };

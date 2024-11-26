@@ -11,6 +11,8 @@ export type RefernceInfo = {
 
 // APIs
 
+export type PageContent = "home" | "service";
+
 type PageType = {
   id: number;
   documentId: string;

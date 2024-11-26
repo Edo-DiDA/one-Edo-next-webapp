@@ -12,13 +12,15 @@ const Header = () => {
   };
 
   return (
-    <header className="p flex justify-between items-center text-gray-800 p-4 md:px-14">
+    <header className="flex justify-between items-center text-gray-800 p-4 md:px-14">
       <div className="hidden md:flex">
         <Link href="#services" className="hover:underline">
           Services
         </Link>
       </div>
-      <span className="font-bold text-md md:text-xl">oneEdo</span>
+      <Link href="/" className="text-neutral-50 font-bold text-md md:text-xl">
+        oneEdo
+      </Link>
       <div className="hidden md:flex space-x-20">
         <Link href="#archives" className="hover:underline">
           Archives
