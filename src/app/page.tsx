@@ -12,10 +12,15 @@ const Home = async () => {
   return (
     <ContentLayout>
       <TopSection
+        content="home"
         title={content?.description}
         body={content?.shortDescription || ""}
       />
-      <Suggestions showNew={true} items={content?.popularsuggestion} />
+      <Suggestions
+        showTitle={false}
+        pageType="home"
+        items={content?.popularsuggestion}
+      />
       <ServiceList services={content?.submenus} />
     </ContentLayout>
   );

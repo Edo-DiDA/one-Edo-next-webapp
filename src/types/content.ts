@@ -11,6 +11,8 @@ export type RefernceInfo = {
 
 // APIs
 
+export type PageContent = "home" | "service";
+
 type PageType = {
   id: number;
   documentId: string;
@@ -33,7 +35,7 @@ export type SubmenuType = {
   };
 };
 
-type BreadcrumbType = {
+export type BreadcrumbType = {
   id: number;
   page: PageType;
 };

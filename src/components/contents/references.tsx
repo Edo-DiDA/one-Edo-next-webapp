@@ -1,28 +1,29 @@
 import Link from "next/link";
-import { Url } from "next/dist/shared/lib/router/router";
 
 import { ArrowRightGreen } from "@/assets/vectors";
-import { RefernceInfo } from "@/types/content";
+import { SubmenuType } from "@/types/content";
 
 type RefrencesProp = {
-  references: RefernceInfo[];
+  showNew?: boolean;
+  items?: SubmenuType[];
 };
 
-const References = ({ references }: RefrencesProp) => {
+const References = ({ items }: RefrencesProp) => {
   return (
     <div className="h-auto px-4 pt-6 pb-10 -mb-6">
-      {references.map(({ title, body, link = "/" }, index) => (
+      {items?.map(({ id, article }) => (
         <Link
-          href={link as Url}
-          key={index}
+          href={`/${article?.slug}`}
+          key={id}
           className="flex flex-row justify-between cursor-pointer border-neutral-200 border h-auto py-3 items-center px-3 mb-6 rounded"
         >
           <div className="w-11/12">
-            <h3 className="text-sm font-bold text-primary-500">{title}</h3>
-            {body && (
+            <h3 className="text-sm font-bold text-primary-500">
+              {article?.title}
+            </h3>
+            {article?.description && (
               <p className="text-xs text-black mt-1 font-light">
-                How to start your business and get the necessary licenses and
-                permits
+                {article?.description}
               </p>
             )}
           </div>

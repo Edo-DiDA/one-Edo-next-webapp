@@ -87,6 +87,7 @@ const config: Config = {
         secondary: {
           500: "#505A5F",
         },
+        "top-search": "#4C6D5D",
       },
     },
     plugins: [],

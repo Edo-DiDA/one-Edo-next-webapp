@@ -1,47 +1,38 @@
 "use client";
 
-import { PopularSuggestionType, SuggestionInfo } from "@/types/content";
+import { getSuggestionConfig } from "@/lib/functions";
+import { PageContent, PopularSuggestionType } from "@/types/content";
 
 type SuggestionsProp = {
   title?: string;
-  showNew?: boolean;
   showTitle?: boolean;
-  suggestions?: SuggestionInfo[];
+  pageType?: PageContent;
   items?: PopularSuggestionType[];
 };
 
 const Suggestions = ({
   items,
-  suggestions,
   showTitle = true,
-  showNew = false,
+  pageType = "service",
   title = "Popular suggestions",
 }: SuggestionsProp) => {
+  const config = getSuggestionConfig();
+
   return (
-    <div className="min-h-[160px] p-4 bg-primary-800">
+    <div className={`h-auto p-4 ${config[pageType].bg}`}>
       {showTitle && (
-        <h6 className="text-xs mb-3 text-white font-light">{title}</h6>
+        <h6 className={`mb-3 ${config[pageType].title}`}>{title}</h6>
       )}
-      <div className="flex flex-row flex-wrap -mr-3">
-        {showNew && items
-          ? items.map(({ title }, index) => (
-              <button
-                key={index}
-                onClick={() => {}}
-                className="h-[40px] rounded bg-primary-700 px-3 text-neutral-50 mr-3 mb-3 truncate"
-              >
-                {title}
-              </button>
-            ))
-          : suggestions?.map(({ name, action }, index) => (
-              <button
-                key={index}
-                onClick={action}
-                className="h-[40px] rounded bg-primary-700 px-3 text-neutral-50 mr-3 mb-3"
-              >
-                {name}
-              </button>
-            ))}
+      <div className="flex flex-row flex-wrap -mb-3 -mr-3">
+        {items?.map(({ title }, index) => (
+          <button
+            key={index}
+            onClick={() => {}}
+            className="h-[40px] rounded bg-primary-400 px-3 text-neutral-50 mr-3 mb-3 truncate"
+          >
+            {title}
+          </button>
+        ))}
       </div>
     </div>
   );
