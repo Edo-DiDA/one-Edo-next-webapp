@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { CustomThemeConfig } from "tailwindcss/types/config";
 
 const config: Config = {
   content: [
@@ -8,6 +9,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          color: "#333",
+          a: {
+            color: "#3182ce",
+            "&:hover": {
+              color: "#2c5282",
+            },
+          },
+        },
+      },
       fontFamily: {
         inter: ["var(--font-inter)", "sans-serif"],
       },
@@ -90,7 +102,7 @@ const config: Config = {
         "top-search": "#4C6D5D",
       },
     },
-    plugins: [],
+    plugins: [require("@tailwindcss/typography")],
   },
 };
 export default config;

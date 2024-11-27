@@ -14,7 +14,7 @@ const ServiceList = ({ services }: ServiceListProp) => {
       <div className="flex flex-row flex-wrap -mb-4 -mr-4">
         {services.map(({ page }, index) => (
           <Link
-            href={`/${page?.slug}`}
+            href={`/services/${page?.slug}`}
             key={index}
             className="h-[208px] rounded mb-4 bg-primary-50 w-[45%] mr-4 p-4 flex flex-col justify-between"
           >

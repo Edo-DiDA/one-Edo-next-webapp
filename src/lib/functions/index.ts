@@ -1,3 +1,5 @@
+import { Url } from "next/dist/shared/lib/router/router";
+
 export const isNotLastOnList = (index: number, listLength: number) => {
   return index < listLength - 1;
 };
@@ -25,3 +27,25 @@ export const getTopSectionConfig = () => ({
     little: "text-neutral-100",
   },
 });
+
+export const buildReferenceUrl = (
+  slug: string = "",
+  component: string
+): Url => {
+  let url: Url;
+  switch (component) {
+    case "shared.service-page":
+      url = `/services/${slug}`;
+      break;
+
+    case "shared.article":
+      url = `/articles/${slug}`;
+      break;
+
+    default:
+      url = `/services/${slug}`;
+      break;
+  }
+
+  return url;
+};
