@@ -18,11 +18,13 @@ const ServicesPage = async ({ params }: ServicePageProps) => {
       {content?.breadcrumbs?.length > 0 && (
         <Breadcrumbs items={content.breadcrumbs} />
       )}
-      <TopSection
-        title={content.description}
-        body={content.shortDescription || ""}
-      />
-      <Suggestions items={content?.popularsuggestion} />
+      <div className="md:flex md:justify-between">
+        <TopSection
+          title={content.description}
+          body={content.shortDescription || ""}
+        />
+        <Suggestions items={content?.popularsuggestion} />
+      </div>
       <References showNew items={content?.submenus} />
     </>
   );

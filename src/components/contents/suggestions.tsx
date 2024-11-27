@@ -1,6 +1,6 @@
 "use client";
 
-import { getSuggestionConfig } from "@/lib/functions";
+import { getSuggestionConfig, getTopSectionConfig } from "@/lib/functions";
 import { PageContent, PopularSuggestionType } from "@/types/content";
 
 type SuggestionsProp = {
@@ -8,20 +8,32 @@ type SuggestionsProp = {
   showTitle?: boolean;
   pageType?: PageContent;
   items?: PopularSuggestionType[];
+  body?: string;
 };
 
 const Suggestions = ({
   items,
+  body,
   showTitle = true,
   pageType = "service",
   title = "Popular suggestions",
 }: SuggestionsProp) => {
   const config = getSuggestionConfig();
+  const bodyConfig = getTopSectionConfig();
 
   return (
-    <div className={`h-auto p-4 ${config[pageType].bg}`}>
+    <div
+      className={`h-auto p-4 lg:py-20 lg:pr-20 lg:pl-0 xl:pr-48 ${config[pageType].bg}`}
+    >
       {showTitle && (
         <h6 className={`mb-3 ${config[pageType].title}`}>{title}</h6>
+      )}
+      {body && (
+        <p
+          className={`hidden  mt-2 text-sm  font-light lg:text-2xl lg:font-semibold lg:block lg:pb-[19px] ${bodyConfig[pageType].little}`}
+        >
+          {body}
+        </p>
       )}
       <div className="flex flex-row flex-wrap -mb-3 -mr-3">
         {items?.map(({ title }, index) => (

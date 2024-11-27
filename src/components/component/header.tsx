@@ -12,23 +12,16 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between items-center text-gray-800 p-4 md:px-14">
-      <div className="hidden md:flex">
+    <header className="flex justify-between items-center text-gray-800 p-4  xl:pl-0 md:pr-14 md:gap-[70%]">
+      <Link href="/" className="text-neutral-50 font-bold text-md md:text-xl">
+        oneEdo
+      </Link>
+      <div className="hidden md:flex text-white">
         <Link href="#services" className="hover:underline">
           Services
         </Link>
       </div>
-      <Link href="/" className="text-neutral-50 font-bold text-md md:text-xl">
-        oneEdo
-      </Link>
-      <div className="hidden md:flex space-x-20">
-        <Link href="#archives" className="hover:underline">
-          Archives
-        </Link>
-        <Link href="#contacts" className="hover:underline">
-          Contacts
-        </Link>
-      </div>
+
       <div className="md:hidden flex items-center gap-5">
         <MenuButton action={openMenu} />
 
