@@ -12,7 +12,6 @@ export const revalidate = 3;
 const ServicesPage = async ({ params }: ServicePageProps) => {
   const slug = await params;
   const content = await getPageFromSlug(slug.service);
-  console.log(content.shortDescription);
   return (
     <>
       {content?.breadcrumbs?.length > 0 && (

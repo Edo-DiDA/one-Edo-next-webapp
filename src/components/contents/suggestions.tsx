@@ -20,7 +20,6 @@ const Suggestions = ({
 }: SuggestionsProp) => {
   const config = getSuggestionConfig();
   const bodyConfig = getTopSectionConfig();
-  console.log(body);
   return (
     <div
       className={`h-auto p-4 md:py-20 lg:pr-20  xl:pr-48 ${config[pageType].bg}`}

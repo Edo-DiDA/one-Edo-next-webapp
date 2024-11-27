@@ -9,7 +9,6 @@ type TopSectionProps = {
 
 const TopSection = ({ title, body, content = "service" }: TopSectionProps) => {
   const config = getTopSectionConfig();
-  console.log({ body });
   return (
     <div
       className={`min-h-[124px]  md:py-20 lg:pl-20 xl:pl-40 ${config[content].bg} p-4`}
