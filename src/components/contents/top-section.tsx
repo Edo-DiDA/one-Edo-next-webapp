@@ -9,18 +9,18 @@ type TopSectionProps = {
 
 const TopSection = ({ title, body, content = "service" }: TopSectionProps) => {
   const config = getTopSectionConfig();
-
+  console.log({ body });
   return (
     <div
-      className={`min-h-[124px]  lg:py-20 lg:pl-20 xl:pl-40 ${config[content].bg} p-4`}
+      className={`min-h-[124px]  md:py-20 lg:pl-20 xl:pl-40 ${config[content].bg} p-4`}
     >
       <h2
-        className={`text-md md:text-5xl font-bold w-5/6 lg:w-3/6  ${config[content].title}`}
+        className={`text-md md:text-5xl font-bold w-5/6   ${config[content].title}`}
       >
         {title}
       </h2>
       <p
-        className={`mt-2 text-sm font-light lg:hidden ${config[content].little}`}
+        className={`mt-2 text-sm font-light md:hidden  ${config[content].little}`}
       >
         {body}
       </p>

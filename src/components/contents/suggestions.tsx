@@ -20,17 +20,17 @@ const Suggestions = ({
 }: SuggestionsProp) => {
   const config = getSuggestionConfig();
   const bodyConfig = getTopSectionConfig();
-
+  console.log(body);
   return (
     <div
-      className={`h-auto p-4 lg:py-20 lg:pr-20 lg:pl-0 xl:pr-48 ${config[pageType].bg}`}
+      className={`h-auto p-4 md:py-20 lg:pr-20  xl:pr-48 ${config[pageType].bg}`}
     >
       {showTitle && (
         <h6 className={`mb-3 ${config[pageType].title}`}>{title}</h6>
       )}
       {body && (
         <p
-          className={`hidden  mt-2 text-sm  font-light lg:text-2xl lg:font-semibold lg:block lg:pb-[19px] ${bodyConfig[pageType].little}`}
+          className={`hidden  mt-2 text-sm   lg:text-2xl font-semibold md:block lg:pb-[19px] ${bodyConfig[pageType].little}`}
         >
           {body}
         </p>

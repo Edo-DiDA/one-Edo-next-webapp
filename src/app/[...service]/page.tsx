@@ -12,13 +12,13 @@ export const revalidate = 3;
 const ServicesPage = async ({ params }: ServicePageProps) => {
   const slug = await params;
   const content = await getPageFromSlug(slug.service);
-
+  console.log(content.shortDescription);
   return (
     <>
       {content?.breadcrumbs?.length > 0 && (
         <Breadcrumbs items={content.breadcrumbs} />
       )}
-      <div className="md:flex md:justify-between">
+      <div className="md:flex  ">
         <TopSection
           title={content.description}
           body={content.shortDescription || ""}
