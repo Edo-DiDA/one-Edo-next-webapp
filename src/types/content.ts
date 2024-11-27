@@ -67,3 +67,17 @@ export type ContentType = {
   breadcrumbs: BreadcrumbType[];
   popularsuggestion: PopularSuggestionType[];
 };
+
+export type ArticleType = {
+  id: number;
+  documentId: string;
+  title: string;
+  description: string;
+  slug: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  featured: boolean;
+  content: string;
+  breadcrumbs: BreadcrumbType[];
+};

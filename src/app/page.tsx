@@ -2,12 +2,12 @@ import Suggestions from "@/components/contents/suggestions";
 import TopSection from "@/components/contents/top-section";
 import ContentLayout from "@/components/contents/Layout";
 import ServiceList from "@/components/contents/service-list";
-import { getServicePage } from "@/lib/functions/get-service";
+import { getPageFromSlug } from "@/lib/functions/get-service";
 
 export const revalidate = 3;
 
 const Home = async () => {
-  const content = await getServicePage();
+  const content = await getPageFromSlug("home");
 
   return (
     <ContentLayout>
