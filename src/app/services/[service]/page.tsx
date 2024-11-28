@@ -12,17 +12,18 @@ export const revalidate = 3;
 const ServicesPage = async ({ params }: ServicePageProps) => {
   const slug = await params;
   const content = await getPageFromSlug(slug.service);
-
   return (
     <>
       {content?.breadcrumbs?.length > 0 && (
         <Breadcrumbs items={content.breadcrumbs} />
       )}
-      <TopSection
-        title={content.description}
-        body={content.shortDescription || ""}
-      />
-      <Suggestions items={content?.popularsuggestion} />
+      <div className="md:flex  ">
+        <TopSection
+          title={content.description}
+          body={content.shortDescription || ""}
+        />
+        <Suggestions items={content?.popularsuggestion} />
+      </div>
       <References showNew items={content?.submenus} />
     </>
   );

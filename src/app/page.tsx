@@ -11,16 +11,19 @@ const Home = async () => {
 
   return (
     <ContentLayout>
-      <TopSection
-        content="home"
-        title={content?.description}
-        body={content?.shortDescription || ""}
-      />
-      <Suggestions
-        showTitle={false}
-        pageType="home"
-        items={content?.popularsuggestion}
-      />
+      <div className="md:flex ">
+        <TopSection
+          content="home"
+          title={content?.description}
+          body={content?.shortDescription || ""}
+        />
+        <Suggestions
+          showTitle={false}
+          pageType="home"
+          items={content?.popularsuggestion}
+          body={content?.shortDescription || ""}
+        />
+      </div>
       <ServiceList services={content?.submenus} />
     </ContentLayout>
   );
