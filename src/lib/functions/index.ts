@@ -18,7 +18,7 @@ export const getSuggestionConfig = () => ({
 export const getTopSectionConfig = () => ({
   service: {
     title: "text-primary-800 ",
-    bg: "  bg-neutral-50 md:w-[50%]",
+    bg: "  bg-neutral-100 md:w-[50%]",
     little: "text-secondary-500",
   },
   home: {
