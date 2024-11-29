@@ -14,3 +14,33 @@
     --foreground: #ededed;
   }
 }
+
+
+ .rendered p {
+  @apply text-sm font-light text-primary-800 mb-4
+}
+
+.rendered h1, 
+.rendered h2, 
+.rendered h3, 
+.rendered h4,
+.rendered h5,
+.rendered h6 {
+  @apply text-md font-bold text-primary-800 pb-4
+}
+
+.rendered a {
+  @apply underline text-primary-500 text-sm
+}
+
+.rendered ul {
+  @apply list-disc mb-4 pl-4 marker:text-primary-500
+}
+
+.rendered li {
+  @apply mb-1
+}
+
+.rendered button {
+  @apply rounded bg-primary-500 text-xs text-neutral-50 mb-3 font-medium
+} 

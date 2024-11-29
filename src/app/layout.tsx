@@ -1,5 +1,7 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import NextTopLoader from "nextjs-toploader";
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -21,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <NextTopLoader color="#275A41" height={3} showSpinner={false} />
       <body className={`${inter.variable} antialiased`}>{children}</body>
       <Script id="hotjar">
         {`(function(h,o,t,j,a,r){

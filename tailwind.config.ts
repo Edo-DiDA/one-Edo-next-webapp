@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { CustomThemeConfig } from "tailwindcss/types/config";
 
 const config: Config = {
   content: [
@@ -7,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: ["bg-neutral-100", "bg-primary-700", "bg-primary-400"],
   theme: {
     extend: {
       typography: {
@@ -34,8 +34,8 @@ const config: Config = {
         xxs: ["0.875rem", { lineHeight: "1.375rem" }],
         xs: ["1rem", { lineHeight: "1.5rem" }],
         sm: ["1.125rem", { lineHeight: "1.75rem" }],
-        md: ["1.5rem", { lineHeight: "1.75rem" }],
-        lg: ["1.25rem", { lineHeight: "1.5rem" }],
+        md: ["1.25rem", { lineHeight: "1.75rem" }],
+        lg: ["1.5rem", { lineHeight: "1.5rem" }],
         xl: ["3rem", { lineHeight: "3.625rem" }],
       },
       boxShadow: {
@@ -102,7 +102,7 @@ const config: Config = {
         "top-search": "#4C6D5D",
       },
     },
-    plugins: [require("@tailwindcss/typography")],
+    plugins: [],
   },
 };
 export default config;

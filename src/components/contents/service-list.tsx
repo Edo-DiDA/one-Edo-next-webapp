@@ -8,7 +8,7 @@ type ServiceListProp = {
 
 const ServiceList = ({ services }: ServiceListProp) => {
   return (
-    <div className="pt-6 px-4 lg:px-20 xl:px-40">
+    <div className="pt-6 px-4 lg:px-20 mb-16 xl:px-40">
       <h4 className="text-black font-medium text-xrs pb-6">POPULAR SERVICES</h4>
 
       <div className="flex flex-row flex-wrap -mb-4 -mr-4">
@@ -16,13 +16,13 @@ const ServiceList = ({ services }: ServiceListProp) => {
           <Link
             href={`/services/${page?.slug}`}
             key={index}
-            className="h-[208px] rounded mb-4 bg-primary-50 md:bg-transparent md:rounded-none w-[45%] md:w-[30%] mr-4 p-4 flex flex-col justify-between"
+            className="h-[208px] rounded mb-4 bg-primary-50 md:bg-transparent md:rounded-none w-[45%] md:w-[30%] mr-4 p-4 flex flex-col justify-between active:bg-primary-100"
           >
             <div>
-              <h6 className="text-sm font-medium text-primary-800">
+              <h6 className="text-sm font-medium text-primary-800 active:text-primary-800">
                 {page?.name}
               </h6>
-              <p className="pt-1 text-secondary-500 text-xs font-light">
+              <p className="pt-1 text-secondary-500 text-xs font-light active:text-secondary-500">
                 {page?.shortDescription}
               </p>
             </div>

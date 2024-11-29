@@ -1,16 +1,39 @@
-import parse from "html-react-parser";
-
 import Breadcrumbs from "@/components/contents/breadcrumbs";
 import TopSection from "@/components/contents/top-section";
 import {
   getArticlesFromSlug,
   getHtmlContent,
 } from "@/lib/functions/get-service";
+import Footer from "@/components/component/footer";
+import PageHighlight from "@/components/contents/page-highlight";
+import AudienceInfo from "@/components/contents/audience-info";
 
 type ArticlesPageProps = {
   params: Promise<{ article: string }>;
 };
 export const revalidate = 3;
+
+const pageSections = [
+  { title: "Step-by-step guide", link: "#" },
+  { title: "Find work based on my degree", link: "#" },
+  { title: "Find work based on my skills", link: "#" },
+  { title: "Find work for people living with disabilities (PWDs)", link: "#" },
+  { title: "Join a community", link: "#" },
+  { title: "Contributors", link: "#" },
+  { title: "Related articles", link: "#" },
+];
+
+const relatedArticles = [
+  { title: "Get career advice", link: "#" },
+  { title: "Learn a skill", link: "#" },
+];
+
+const contributors = [
+  {
+    title: "Edo Skills Development Agency (Edo Jobs)",
+    link: "http://example.com",
+  },
+];
 
 const ServicesPage = async ({ params }: ArticlesPageProps) => {
   const slug = await params;
@@ -24,24 +47,29 @@ const ServicesPage = async ({ params }: ArticlesPageProps) => {
       )}
       <TopSection title={data.title} body={data.description || ""} />
 
+      <AudienceInfo />
+
+      <PageHighlight
+        items={pageSections}
+        title="On this page"
+        bottomBorder={true}
+        addBullets
+      />
+
       <div className="p-4">
-        {/* <article
-          className="prose prose-h4:px-4"
+        <article
+          className="prose rendered prose-h4:px-4"
           dangerouslySetInnerHTML={{ __html: article }}
-        /> */}
-        {parse(article, {
-          replace(node) {
-            if (node.type === "tag" && node.name === "h4") {
-              return <h4 className="text-primary-500">TTT</h4>;
-            }
-          },
-        })}
-        {/* <div className="prose mx-auto my-8 prose-h1:text-primary-400">
-          <h1>Test Title</h1>
-          <p>This paragraph should be styled with Tailwind prose.</p>
-          <a href="#">This is a link.</a>
-        </div> */}
+        />
       </div>
+
+      <PageHighlight
+        items={contributors}
+        title="Contributors"
+        background="primary-50"
+      />
+      <PageHighlight items={relatedArticles} title="Related Articles" />
+      <Footer />
     </>
   );
 };
