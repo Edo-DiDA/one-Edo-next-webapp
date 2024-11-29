@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { CustomThemeConfig } from "tailwindcss/types/config";
 
 const config: Config = {
   content: [
@@ -7,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: ["bg-neutral-100", "bg-primary-700", "bg-primary-400"],
   theme: {
     extend: {
       typography: {
@@ -102,7 +102,7 @@ const config: Config = {
         "top-search": "#4C6D5D",
       },
     },
-    plugins: [require("@tailwindcss/typography")],
+    plugins: [],
   },
 };
 export default config;

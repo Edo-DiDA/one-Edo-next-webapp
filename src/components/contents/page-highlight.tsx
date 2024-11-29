@@ -7,6 +7,7 @@ type PageHighlightProps = {
   height?: string;
   background?: string;
   addBullets?: boolean;
+  bottomBorder?: boolean;
   items: HighlightItem[];
 };
 
@@ -14,15 +15,15 @@ const PageHighlight = ({
   items,
   title,
   height = "auto",
-  background = "neutral-50",
   addBullets = false,
+  bottomBorder = false,
+  background = "neutral-50",
 }: PageHighlightProps) => {
+  const border = bottomBorder ? "border-b border-neutral-200" : "";
   const bullets = addBullets ? "list-disc ml-4 marker:text-primary-500" : "";
   return (
     <>
-      <div
-        className={`py-6 h-${height} bg-${background} px-4 border-b border-neutral-200`}
-      >
+      <div className={`py-6 h-${height} bg-${background} px-4 ${border}`}>
         <p className="text-md text-primary-800 font-bold mb-3">{title}</p>
         <ul className={bullets}>
           {items.map(({ title, link }, index) => (

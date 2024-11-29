@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <footer className="h-[438px] bg-primary-900 py-10 px-4">
       <div>
-        <h4 className="text-white font-bold text-sm">Services</h4>
+        <h4 className="text-white font-bold text-sm mb-3">Services</h4>
         <ul className="list-none pb-4 border-b-[0.5px] border-neutral-800">
           {bottomNav.map(({ name, link }, index) => (
             <li className="mb-4" key={index}>

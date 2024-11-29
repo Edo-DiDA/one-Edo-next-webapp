@@ -19,7 +19,7 @@ const References = ({ items }: RefrencesProp) => {
           className="flex flex-row justify-between cursor-pointer border-neutral-200 border h-auto py-3 items-center px-3 mb-6 rounded"
         >
           <div className="w-11/12">
-            <h3 className="text-sm font-bold text-primary-500">
+            <h3 className="text-sm font-bold text-primary-500 active:primary-800">
               {article?.title}
             </h3>
             {article?.description && (

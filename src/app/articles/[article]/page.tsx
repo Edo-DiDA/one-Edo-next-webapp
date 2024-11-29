@@ -49,7 +49,12 @@ const ServicesPage = async ({ params }: ArticlesPageProps) => {
 
       <AudienceInfo />
 
-      <PageHighlight items={pageSections} title="On this page" addBullets />
+      <PageHighlight
+        items={pageSections}
+        title="On this page"
+        bottomBorder={true}
+        addBullets
+      />
 
       <div className="p-4">
         <article

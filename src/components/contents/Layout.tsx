@@ -16,7 +16,7 @@ const ContentLayout = ({ children }: ContentLayoutProp) => {
             <input
               type="text"
               placeholder="What do you need?"
-              className="bg-inherit placeholder-neutral-200 ml-[12px] h-full w-full lg:w-[400px]  focus:outline-none"
+              className="caret-neutral-50 text-neutral-50 text-xs font-light bg-inherit placeholder-neutral-200 ml-[12px] h-full w-full lg:w-[400px]  focus:outline-none"
             />
           </div>
         </div>

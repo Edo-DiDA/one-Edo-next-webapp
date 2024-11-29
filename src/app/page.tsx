@@ -3,6 +3,7 @@ import TopSection from "@/components/contents/top-section";
 import ContentLayout from "@/components/contents/Layout";
 import ServiceList from "@/components/contents/service-list";
 import { getPageFromSlug } from "@/lib/functions/get-service";
+import Footer from "@/components/component/footer";
 
 export const revalidate = 3;
 
@@ -25,6 +26,7 @@ const Home = async () => {
         />
       </div>
       <ServiceList services={content?.submenus} />
+      <Footer />
     </ContentLayout>
   );
 };

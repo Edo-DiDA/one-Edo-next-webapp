@@ -7,7 +7,9 @@ const mockList = [
 const AudienceInfo = ({}) => {
   return (
     <div className="min-h-[316px] py-6 bg-primary-50 px-4">
-      <h5 className="text-md mb-0">Who is this for?</h5>
+      <h5 className="text-md font-bold text-primary-800 mb-3">
+        Who is this for?
+      </h5>
       <p className="text-sm mt-0 font-light text-primary-800">
         All residents of Edo state can access this service, including:
       </p>
