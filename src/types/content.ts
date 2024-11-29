@@ -9,6 +9,11 @@ export type RefernceInfo = {
   link?: string;
 };
 
+export type HighlightItem = {
+  title: string;
+  link?: string;
+};
+
 // APIs
 
 export type PageContent = "home" | "service";
