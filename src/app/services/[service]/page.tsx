@@ -1,3 +1,4 @@
+import Footer from "@/components/component/footer";
 import Breadcrumbs from "@/components/contents/breadcrumbs";
 import References from "@/components/contents/references";
 import Suggestions from "@/components/contents/suggestions";
@@ -17,7 +18,7 @@ const ServicesPage = async ({ params }: ServicePageProps) => {
       {content?.breadcrumbs?.length > 0 && (
         <Breadcrumbs items={content.breadcrumbs} />
       )}
-      <div className="md:flex  ">
+      <div className="md:flex">
         <TopSection
           title={content.description}
           body={content.shortDescription || ""}
@@ -25,6 +26,7 @@ const ServicesPage = async ({ params }: ServicePageProps) => {
         <Suggestions items={content?.popularsuggestion} />
       </div>
       <References showNew items={content?.submenus} />
+      <Footer />
     </>
   );
 };
