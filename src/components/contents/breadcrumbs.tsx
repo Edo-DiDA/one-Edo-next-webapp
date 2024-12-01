@@ -17,7 +17,11 @@ const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
             <>
               <Link
                 key={id}
-                href={`/${page?.slug}`}
+                href={
+                  page?.name.toLowerCase() === "home"
+                    ? "/"
+                    : `/services/${page?.slug}`
+                }
                 className={`text-xxs text-${
                   isNotLastOnList(index, items.length) ? "primary" : "secondary"
                 }-500 font-light`}

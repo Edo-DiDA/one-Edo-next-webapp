@@ -12,19 +12,19 @@ type RefrencesProp = {
 const References = ({ items }: RefrencesProp) => {
   return (
     <div className="h-auto px-4 pt-6 pb-10 -mb-6 lg:py-20 lg:px-20 xl:px-40 ">
-      {items?.map(({ id, article, __component }) => (
+      {items?.map(({ id, page, article, __component }) => (
         <Link
-          href={buildReferenceUrl(article?.slug, __component)}
+          href={buildReferenceUrl(article?.slug || page?.slug, __component)}
           key={id}
           className="flex flex-row justify-between cursor-pointer border-neutral-200 border h-auto py-3 items-center px-3 mb-6 rounded"
         >
           <div className="w-11/12">
             <h3 className="text-sm font-bold text-primary-500 active:primary-800">
-              {article?.title}
+              {article?.title || page?.name}
             </h3>
-            {article?.description && (
+            {(article?.description || page?.shortDescription) && (
               <p className="text-xs text-black mt-1 font-light">
-                {article?.description}
+                {article?.description || page?.shortDescription}
               </p>
             )}
           </div>
