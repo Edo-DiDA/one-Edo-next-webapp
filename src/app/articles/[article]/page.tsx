@@ -45,30 +45,35 @@ const ServicesPage = async ({ params }: ArticlesPageProps) => {
       {data?.breadcrumbs?.length > 0 && (
         <Breadcrumbs items={data.breadcrumbs} />
       )}
-      <TopSection title={data.title} body={data.description || ""} />
-
-      <AudienceInfo />
-
-      <PageHighlight
-        items={pageSections}
-        title="On this page"
-        bottomBorder={true}
-        addBullets
-      />
-
-      <div className="p-4">
-        <article
-          className="prose rendered prose-h4:px-4"
-          dangerouslySetInnerHTML={{ __html: article }}
-        />
+      <div className="md:flex ">
+        <TopSection title={data.title} body={data.description || ""} />
+        <AudienceInfo />
       </div>
 
-      <PageHighlight
-        items={contributors}
-        title="Contributors"
-        background="primary-50"
-      />
-      <PageHighlight items={relatedArticles} title="Related Articles" />
+      <div className="md:flex">
+        <div className="md:w-[50%]">
+          <PageHighlight
+            items={pageSections}
+            title="On this page"
+            bottomBorder={true}
+            addBullets
+          />
+          <div className="p-4">
+            <article
+              className="prose rendered prose-h4:px-4"
+              dangerouslySetInnerHTML={{ __html: article }}
+            />
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-col-reverse justify-end">
+          <PageHighlight
+            items={contributors}
+            title="Contributors"
+            background="primary-50"
+          />
+          <PageHighlight items={relatedArticles} title="Related Articles" />
+        </div>
+      </div>
       <Footer />
     </>
   );
