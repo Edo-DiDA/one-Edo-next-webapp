@@ -1,5 +1,6 @@
 import { remark } from "remark";
 import html from "remark-html";
+import remarkHeadingId from "remark-heading-id";
 
 import { ArticleType, ContentType } from "@/types/content";
 
@@ -28,6 +29,6 @@ export const getArticlesFromSlug = async (
 };
 
 export const getHtmlContent = async (content: string) => {
-  const result = await remark().use(html).process(content);
+  const result = await remark().use(html).use(remarkHeadingId).process(content);
   return result.toString();
 };
