@@ -10,7 +10,7 @@ export const getSuggestionConfig = () => ({
     bg: "bg-primary-50 lg:pl-4 md:w-[50%]",
   },
   home: {
-    title: "text-xs text-white font-light",
+    title: "text-xs text-white font-light ",
     bg: "bg-primary-600 lg:pl-0",
   },
 });
