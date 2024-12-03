@@ -50,7 +50,7 @@ const ServicesPage = async ({ params }: ArticlesPageProps) => {
         <AudienceInfo />
       </div>
 
-      <div className="md:flex">
+      <div className="md:flex md:py-20 lg:pl-20 xl:pl-40">
         <div className="md:w-[50%]">
           <PageHighlight
             items={pageSections}
