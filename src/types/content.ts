@@ -17,7 +17,13 @@ export type HighlightItem = {
 
 // APIs
 
-export type PageContent = "home" | "service"|"search";
+export type PageContent = "home" | "service" | "search";
+
+export type PageContributors = {
+  id: number;
+  name: string;
+  website: string;
+};
 
 type PageType = {
   id: number;
@@ -55,7 +61,6 @@ export type SearchType = {
   updatedAt: string;
   publishedAt: string;
   content: string;
-
 };
 export type BreadcrumbType = {
   id: number;
@@ -108,6 +113,7 @@ export type ArticleType = {
   content: string;
   outline: string;
   whoisthisfor: string;
+  contributors: PageContributors[];
   breadcrumbs: BreadcrumbType[];
   relatedpages: RelatedPages[];
 };
