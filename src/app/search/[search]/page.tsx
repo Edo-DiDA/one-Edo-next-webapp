@@ -5,7 +5,7 @@ import { getSearch } from "@/lib/functions/get-service";
 import React from "react";
 
 type SearchPageProps = {
-  params: { search: string };
+  params: Promise<{ search: string }>;
 };
 
 const Page = async ({ params }: SearchPageProps) => {

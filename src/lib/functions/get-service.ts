@@ -2,7 +2,7 @@ import { remark } from "remark";
 import html from "remark-html";
 import remarkHeadingId from "remark-heading-id";
 
-import { ArticleType, ContentType } from "@/types/content";
+import { ArticleType, ContentType, SearchType } from "@/types/content";
 
 const baseUrl = "https://content.oneedo.ng/api";
 
@@ -33,7 +33,7 @@ export const getHtmlContent = async (content: string) => {
   return result.toString();
 };
 
-export const getSearch = async (searchTerm: string): Promise<any> => {
+export const getSearch = async (searchTerm: string): Promise<SearchType[]> => {
   const url = `${baseUrl}/articles?filters[title][$contains]=${encodeURIComponent(
     searchTerm
   )}`;
