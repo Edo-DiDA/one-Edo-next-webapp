@@ -16,7 +16,7 @@ export type HighlightItem = {
 
 // APIs
 
-export type PageContent = "home" | "service";
+export type PageContent = "home" | "service"|"search";
 
 type PageType = {
   id: number;
@@ -40,6 +40,18 @@ export type SubmenuType = {
   };
 };
 
+export type SearchType = {
+  id: number;
+  documentId: string;
+  title: string;
+  description: string;
+  slug: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  content: string;
+
+};
 export type BreadcrumbType = {
   id: number;
   page: PageType;

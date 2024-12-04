@@ -32,3 +32,12 @@ export const getHtmlContent = async (content: string) => {
   const result = await remark().use(html).use(remarkHeadingId).process(content);
   return result.toString();
 };
+
+export const getSearch = async (
+  searchTerm: string
+): Promise<any> => {
+  const url = `${baseUrl}/articles?filters[title][$contains]=${encodeURIComponent(searchTerm)}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  return data.data;
+};

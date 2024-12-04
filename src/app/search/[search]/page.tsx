@@ -1,0 +1,29 @@
+import Footer from "@/components/component/footer";
+import SearchReferences from "@/components/contents/search-references";
+import TopSection from "@/components/contents/top-section";
+import { getSearch } from "@/lib/functions/get-service";
+import React from "react";
+
+type SearchPageProps = {
+  params: { search: string };
+};
+
+const Page = async ({ params }: SearchPageProps) => {
+  const { search } = await params;
+  const data = await getSearch(search);
+
+  return (
+    <div>
+      <TopSection
+        title="Search Results"
+        body={`${data.length} result for "${search}"`}
+        content="search"
+      />
+      <SearchReferences showNew items={data} />
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Page;
