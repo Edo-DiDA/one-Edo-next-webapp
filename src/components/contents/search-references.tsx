@@ -5,7 +5,6 @@ import { SearchType, SubmenuType } from "@/types/content";
 import { buildReferenceUrl } from "@/lib/functions";
 
 type RefrencesProp = {
-  showNew?: boolean;
   items?: SearchType[];
 };
 
