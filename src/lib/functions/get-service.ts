@@ -10,7 +10,7 @@ const payload =
   "populate[submenus][on][shared.service-page][populate][page][fields][0]=name&populate[submenus][on][shared.service-page][populate][page][fields][1]=description&populate[submenus][on][shared.service-page][populate][page][fields][2]=slug&populate[submenus][on][shared.service-page][populate][page][fields][3]=shortDescription&populate[submenus][on][shared.article][populate][article][fields][0]=title&populate[submenus][on][shared.article][populate][article][fields][1]=description&populate[submenus][on][shared.article][populate][article][fields][2]=slug&populate[breadcrumbs][populate][page][fields][0]=name&populate[breadcrumbs][populate][page][fields][1]=slug&populate[popularsuggestion][populate][page][fields][0]=title&populate[popularsuggestion][populate][page][fields][1]=slug";
 
 const articlesPayload =
-  "populate[breadcrumbs][on][shared.service-page][populate][page][fields][0]=name&populate[breadcrumbs][on][shared.service-page][populate][page][fields][1]=description&populate[breadcrumbs][on][shared.service-page][populate][page][fields][2]=slug";
+  "populate[breadcrumbs][on][shared.service-page][populate][page][fields][0]=name&populate[breadcrumbs][on][shared.service-page][populate][page][fields][1]=description&populate[breadcrumbs][on][shared.service-page][populate][page][fields][2]=slug&populate[relatedpages][populate][article][fields][0]=title&populate[relatedpages][populate][article][fields][1]=slug&populate[relatedpages][populate][article][fields][2]=description";
 
 export const getPageFromSlug = async (slug: string): Promise<ContentType> => {
   const url = `${baseUrl}/categories/${slug}?${payload}`;
@@ -37,6 +37,13 @@ export const getSearch = async (searchTerm: string): Promise<any> => {
   const url = `${baseUrl}/articles?filters[title][$contains]=${encodeURIComponent(
     searchTerm
   )}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  return data.data;
+};
+
+export const getServices = async (): Promise<ContentType[]> => {
+  const url = `${baseUrl}/categories`;
   const res = await fetch(url);
   const data = await res.json();
   return data.data;

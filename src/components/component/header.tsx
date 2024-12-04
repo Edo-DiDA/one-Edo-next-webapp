@@ -1,10 +1,15 @@
 "use client";
+import { ContentType } from "@/types/content";
 import Link from "next/link";
 import React, { useState } from "react";
 
 import MenuButton from "../contents/menu-button";
 
-const Header = () => {
+type HeaderProps = {
+  links: ContentType[];
+};
+
+const Header = ({ links }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openMenu = () => {
@@ -26,19 +31,21 @@ const Header = () => {
         <MenuButton action={openMenu} />
 
         {isMenuOpen && (
-          <div className="absolute top-16 right-4 bg-gray-800 text-white rounded shadow-lg md:hidden">
-            <nav className="flex flex-col space-y-2 p-4">
-              <Link href="/education" className="hover:underline">
-                Education
-              </Link>
-              <Link href="/health" className="hover:underline">
-                Health
-              </Link>
-              <Link href="/work" className="hover:underline">
-                Work
-              </Link>
-            </nav>
-          </div>
+          <nav className="absolute overflow-y-scroll bg-primary-600 max-h-[80vh] top-24 px-4 pb-5 left-0 right-0 w-full text-white shadow-lg md:hidden">
+            <p className="text-neutral-50 text-xs font-medium py-4">Services</p>
+            <ul className="flex overflow-y-scroll flex-col -pb-3">
+              {links.map(({ id, name, slug }) => (
+                <li key={id} className="py-3">
+                  <Link
+                    href={`/services/${slug}`}
+                    className="md:hover:underline active:underline"
+                  >
+                    {name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         )}
       </div>
     </header>

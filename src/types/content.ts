@@ -10,6 +10,7 @@ export type RefernceInfo = {
 };
 
 export type HighlightItem = {
+  id?: string;
   title: string;
   link?: string;
 };
@@ -27,17 +28,21 @@ type PageType = {
   description?: string | null;
 };
 
+export type ArticleInfo = {
+  id: number;
+  documentId: string;
+  name: string;
+  slug: string;
+  title: string;
+  shortDescription?: string;
+  description?: string | null;
+};
+
 export type SubmenuType = {
   __component: string;
   id: number;
   page?: PageType;
-  article?: {
-    id: number;
-    documentId: string;
-    title: string;
-    description?: string | null;
-    slug: string;
-  };
+  article?: ArticleInfo;
 };
 
 export type SearchType = {
@@ -55,6 +60,11 @@ export type SearchType = {
 export type BreadcrumbType = {
   id: number;
   page: PageType;
+};
+
+export type RelatedPages = {
+  id: number;
+  article: ArticleInfo;
 };
 
 export type PopularSuggestionType = {
@@ -96,5 +106,8 @@ export type ArticleType = {
   publishedAt: string;
   featured: boolean;
   content: string;
+  outline: string;
+  whoisthisfor: string;
   breadcrumbs: BreadcrumbType[];
+  relatedpages: RelatedPages[];
 };
