@@ -7,19 +7,15 @@ import {
 import Footer from "@/components/component/footer";
 import PageHighlight from "@/components/contents/page-highlight";
 import AudienceInfo from "@/components/contents/audience-info";
-import { transformArticleToHighlight } from "@/lib/functions";
+import {
+  transformArticleToHighlight,
+  transformContributorsToHighlight,
+} from "@/lib/functions";
 
 type ArticlesPageProps = {
   params: Promise<{ article: string }>;
 };
 export const revalidate = 3;
-
-const contributors = [
-  {
-    title: "Edo Skills Development Agency (Edo Jobs)",
-    link: "http://example.com",
-  },
-];
 
 const ServicesPage = async ({ params }: ArticlesPageProps) => {
   const slug = await params;
@@ -57,11 +53,14 @@ const ServicesPage = async ({ params }: ArticlesPageProps) => {
           </div>
         </div>
         <div className="flex flex-col md:flex-col-reverse justify-end">
-          <PageHighlight
-            items={contributors}
-            title="Contributors"
-            background="primary-50"
-          />
+          {data?.contributors && (
+            <PageHighlight
+              useExternalLinks
+              items={transformContributorsToHighlight(data?.contributors)}
+              title="Contributors"
+              background="primary-50"
+            />
+          )}
           {data?.relatedpages && (
             <PageHighlight
               items={transformArticleToHighlight(data?.relatedpages)}

@@ -1,12 +1,12 @@
 "use client";
-import { ContentType } from "@/types/content";
+import { SubmenuType } from "@/types/content";
 import Link from "next/link";
 import React, { useState } from "react";
 
 import MenuButton from "../contents/menu-button";
 
 type HeaderProps = {
-  links: ContentType[];
+  links: SubmenuType[];
 };
 
 const Header = ({ links }: HeaderProps) => {
@@ -34,13 +34,13 @@ const Header = ({ links }: HeaderProps) => {
           <nav className="absolute overflow-y-scroll bg-primary-600 max-h-[80vh] top-24 px-4 pb-5 left-0 right-0 w-full text-white shadow-lg md:hidden">
             <p className="text-neutral-50 text-xs font-medium py-4">Services</p>
             <ul className="flex overflow-y-scroll flex-col -pb-3">
-              {links.map(({ id, name, slug }) => (
+              {links.map(({ id, page }) => (
                 <li key={id} className="py-3">
                   <Link
-                    href={`/services/${slug}`}
+                    href={`/services/${page?.slug}`}
                     className="md:hover:underline active:underline"
                   >
-                    {name}
+                    {page?.name}
                   </Link>
                 </li>
               ))}
