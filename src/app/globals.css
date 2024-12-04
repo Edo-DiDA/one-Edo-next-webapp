@@ -16,7 +16,7 @@
 }
 
 
- .rendered p {
+.rendered p {
   @apply text-sm font-light text-primary-800 mb-4
 }
 
@@ -37,8 +37,12 @@
   @apply list-disc mb-4 pl-4 marker:text-primary-500
 }
 
-.rendered li {
-  @apply mb-1
+.rendered ol {
+  @apply list-decimal mb-4 pl-4 marker:text-primary-800
+}
+
+.rendered li, .rendered ol {
+  @apply mb-1 text-sm
 }
 
 .rendered button {
