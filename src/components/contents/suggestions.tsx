@@ -20,7 +20,6 @@ const Suggestions = ({
   title = "Popular suggestions",
 }: SuggestionsProp) => {
   const config = getSuggestionConfig();
-  const bodyConfig = getTopSectionConfig();
   const router = useRouter();
 
   return (
@@ -32,7 +31,7 @@ const Suggestions = ({
       )}
       {body && (
         <p
-          className={`hidden mt-2 text-sm lg:text-2xl font-semibold md:block lg:pb-[19px] ${bodyConfig[pageType].little}`}
+          className={`hidden mt-2 text-sm lg:text-2xl font-semibold md:block lg:pb-[19px]  ${config[pageType].little}`}
         >
           {body}
         </p>
@@ -42,7 +41,7 @@ const Suggestions = ({
           <button
             key={index}
             onClick={() => router.push(`/articles/${page?.slug}`)}
-            className={`h-[40px] rounded ${bodyConfig[pageType].btn} px-3 text-neutral-50 mr-3 mb-3 truncate active:bg-primary-500`}
+            className={`h-[40px] rounded ${config[pageType].btn} px-3 text-neutral-50 mr-3 mb-3 truncate active:bg-primary-500`}
           >
             {title}
           </button>

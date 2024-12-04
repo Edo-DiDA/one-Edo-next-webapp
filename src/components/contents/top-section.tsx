@@ -13,14 +13,10 @@ const TopSection = ({ title, body, content = "service" }: TopSectionProps) => {
     <div
       className={`min-h-[124px]  md:py-20 lg:pl-20 xl:pl-40 ${config[content].bg} p-4`}
     >
-      <h2
-        className={`text-md md:text-5xl font-bold w-5/6   ${config[content].title}`}
-      >
+      <h2 className={`text-lg font-bold w-5/6  ${config[content].title}`}>
         {title}
       </h2>
-      <p
-        className={`mt-2 text-sm font-light md:hidden  ${config[content].little}`}
-      >
+      <p className={`mt-2 text-sm font-light    ${config[content].little}`}>
         {body}
       </p>
     </div>

@@ -33,6 +33,15 @@ export const getHtmlContent = async (content: string) => {
   return result.toString();
 };
 
+export const getSearch = async (searchTerm: string): Promise<any> => {
+  const url = `${baseUrl}/articles?filters[title][$contains]=${encodeURIComponent(
+    searchTerm
+  )}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  return data.data;
+};
+
 export const getServices = async (): Promise<ContentType[]> => {
   const url = `${baseUrl}/categories`;
   const res = await fetch(url);
