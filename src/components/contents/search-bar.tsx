@@ -20,7 +20,11 @@ const SearchBar = ({}) => {
   };
 
   return (
-    <div className="bg-top-search flex flex-row w-full h-full items-center rounded pl-3">
+    <div
+      className={`bg-top-search flex flex-row w-full h-full items-center rounded pl-3 ${
+        search ? "border-b-2 border-neutral-50" : "border-b border-transparent"
+      }`}
+    >
       <WhiteMagLens />
       <input
         type="text"
