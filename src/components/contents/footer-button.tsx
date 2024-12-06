@@ -4,7 +4,9 @@ import { ArrowUpWhite } from "@/assets/vectors";
 
 const FooterButton = () => {
   const scrollToTop = () => {
-    window && window.scrollTo({ top: 0, behavior: "smooth" });
+    if (window) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   return (
