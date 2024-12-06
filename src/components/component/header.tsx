@@ -1,4 +1,5 @@
 "use client";
+import { Logo, LogoText } from "@/assets/vectors";
 import { SubmenuType } from "@/types/content";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -18,8 +19,14 @@ const Header = ({ links }: HeaderProps) => {
 
   return (
     <header className="flex justify-between items-center text-gray-800 p-4  xl:pl-0 md:pr-14 md:gap-[70%]">
-      <Link href="/" className="text-neutral-50 font-bold text-md md:text-xl">
-        oneEdo
+      <Link
+        href="/"
+        className="text-neutral-50 font-bold text-md md:text-xl md:flex md:flex-row"
+      >
+        <Logo />
+        <div className="hidden md:block">
+          <LogoText />
+        </div>
       </Link>
       <div className="hidden md:flex text-white">
         <Link href="#services" className="hover:underline">
