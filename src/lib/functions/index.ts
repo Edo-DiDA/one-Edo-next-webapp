@@ -1,4 +1,10 @@
 import { Url } from "next/dist/shared/lib/router/router";
+import {
+  BreadcrumbType,
+  HighlightItem,
+  PageContributors,
+  RelatedPages,
+} from "@/types/content";
 
 export const isNotLastOnList = (index: number, listLength: number) => {
   return index < listLength - 1;
@@ -66,4 +72,28 @@ export const buildReferenceUrl = (
   }
 
   return url;
+};
+
+export const processBreadcrumbs = (arr: BreadcrumbType[]): BreadcrumbType[] => {
+  return arr.length > 3 ? [arr[0], ...arr.slice(-2)] : arr;
+};
+
+export const transformArticleToHighlight = (
+  articles: RelatedPages[]
+): HighlightItem[] => {
+  return articles.map(({ article }) => ({
+    id: article?.documentId,
+    title: article?.title,
+    link: article.slug ? `/articles/${article.slug}` : undefined,
+  }));
+};
+
+export const transformContributorsToHighlight = (
+  contributors: PageContributors[]
+): HighlightItem[] => {
+  return contributors.map((contributor) => ({
+    id: contributor?.id?.toString(),
+    title: contributor?.name,
+    link: contributor.website || "",
+  }));
 };

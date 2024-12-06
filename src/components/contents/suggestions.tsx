@@ -1,6 +1,6 @@
 "use client";
 
-import { getSuggestionConfig, getTopSectionConfig } from "@/lib/functions";
+import { getSuggestionConfig } from "@/lib/functions";
 import { PageContent, PopularSuggestionType } from "@/types/content";
 import { useRouter } from "next/navigation";
 

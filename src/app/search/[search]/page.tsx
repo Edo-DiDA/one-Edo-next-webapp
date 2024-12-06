@@ -5,7 +5,7 @@ import { getSearch } from "@/lib/functions/get-service";
 import React from "react";
 
 type SearchPageProps = {
-  params: { search: string };
+  params: Promise<{ search: string }>;
 };
 
 const Page = async ({ params }: SearchPageProps) => {
@@ -19,7 +19,7 @@ const Page = async ({ params }: SearchPageProps) => {
         body={`${data.length} result for "${search}"`}
         content="search"
       />
-      <SearchReferences showNew items={data} />
+      <SearchReferences items={data} />
 
       <Footer />
     </div>

@@ -9,6 +9,7 @@ type PageHighlightProps = {
   addBullets?: boolean;
   bottomBorder?: boolean;
   items: HighlightItem[];
+  useExternalLinks?: boolean;
 };
 
 const PageHighlight = ({
@@ -17,6 +18,7 @@ const PageHighlight = ({
   height = "auto",
   addBullets = false,
   bottomBorder = false,
+  useExternalLinks = false,
   background = "neutral-50",
 }: PageHighlightProps) => {
   const border = bottomBorder ? "border-b border-neutral-200" : "";
@@ -28,12 +30,23 @@ const PageHighlight = ({
         <ul className={bullets}>
           {items.map(({ title, link }, index) => (
             <li key={index} className="mb-1">
-              <Link
-                href={`/${link}`}
-                className="underline text-primary-500 text-sm"
-              >
-                {title}
-              </Link>
+              {useExternalLinks ? (
+                <a
+                  href={link}
+                  target="_blank"
+                  className="underline text-primary-500 text-sm"
+                >
+                  {title}
+                </a>
+              ) : (
+                <Link
+                  href={`/${link}`}
+                  target=""
+                  className="underline text-primary-500 text-sm"
+                >
+                  {title}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

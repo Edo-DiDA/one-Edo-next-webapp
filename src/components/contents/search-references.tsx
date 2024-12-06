@@ -1,11 +1,9 @@
 import Link from "next/link";
 
 import { ArrowRightGreen } from "@/assets/vectors";
-import { SearchType, SubmenuType } from "@/types/content";
-import { buildReferenceUrl } from "@/lib/functions";
+import { SearchType } from "@/types/content";
 
 type RefrencesProp = {
-  showNew?: boolean;
   items?: SearchType[];
 };
 
@@ -14,7 +12,7 @@ const SearchReferences = ({ items }: RefrencesProp) => {
     <div className="h-auto px-4 pt-6 pb-10 -mb-6 lg:py-20 lg:px-20 xl:px-40 ">
       {items?.map((item) => (
         <Link
-          href={buildReferenceUrl(item.slug, item.documentId)}
+          href={`/articles/${item?.slug}`}
           key={item.id}
           className="flex flex-row justify-between cursor-pointer border-neutral-200 border h-auto py-3 items-center px-3 mb-6 rounded"
         >
