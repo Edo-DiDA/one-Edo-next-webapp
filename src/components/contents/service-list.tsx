@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SubmenuType } from "@/types/content";
-import { ArrowRightGreen } from "@/assets/vectors";
+import { ArrowRightDeepGreen, ArrowRightGreen } from "@/assets/vectors";
 
 type ServiceListProp = {
   services: SubmenuType[];
@@ -18,10 +18,10 @@ const ServiceList = ({ services }: ServiceListProp) => {
           <Link
             href={`/services/${page?.slug}`}
             key={index}
-            className="h-[208px] rounded mb-4 bg-primary-50 md:bg-transparent md:rounded-none w-[45%] md:w-[30%] mr-4 p-4 flex flex-col justify-between active:bg-primary-100"
+            className="h-[208px] md:hover:border-b-2 md:hover:border-primary-500 rounded mb-4 bg-neutral-100 md:bg-neutral-100 w-[45%] md:w-[30%] md:hover:bg-black mr-4 p-4 flex flex-col justify-between md:active:bg-primary-50 active:bg-primary-50"
           >
             <div>
-              <h6 className="text-sm font-medium text-primary-800 active:text-primary-800 md:text-lg md:font-semibold">
+              <h6 className="text-sm font-medium text-primary-800 md:active:text-primary-800 md:hover:text-primary-500 active:text-primary-800 md:text-lg md:font-semibold">
                 {page?.name}
               </h6>
               <p className="pt-1 text-secondary-500 text-xs font-light active:text-secondary-500 md:pt-2">
@@ -29,7 +29,12 @@ const ServiceList = ({ services }: ServiceListProp) => {
               </p>
             </div>
             <div className="flex self-end">
-              <ArrowRightGreen />
+              <div className="md:hover:hidden md:active:hidden">
+                <ArrowRightGreen />
+              </div>
+              <div className="hidden md:hover:block md:active:block">
+                <ArrowRightDeepGreen />
+              </div>
             </div>
           </Link>
         ))}
