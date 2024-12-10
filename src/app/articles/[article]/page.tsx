@@ -63,6 +63,7 @@ const ServicesPage = async ({ params }: ArticlesPageProps) => {
           )}
           {data?.relatedpages && (
             <PageHighlight
+              useExternalLinks
               items={transformArticleToHighlight(data?.relatedpages)}
               title="Related Articles"
             />
