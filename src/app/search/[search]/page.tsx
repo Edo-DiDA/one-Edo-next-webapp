@@ -14,6 +14,7 @@ const Page = async ({ params }: SearchPageProps) => {
 
   return (
     <div>
+      <div className="md:hidden h-[64px]"></div>
       <TopSection
         title="Search Results"
         body={`${data.length} result for "${search}"`}

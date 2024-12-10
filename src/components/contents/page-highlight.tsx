@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Url } from "next/dist/shared/lib/router/router";
 
 import { HighlightItem } from "@/types/content";
 
@@ -40,8 +41,7 @@ const PageHighlight = ({
                 </a>
               ) : (
                 <Link
-                  href={`/${link}`}
-                  target=""
+                  href={link as Url}
                   className="underline text-primary-500 text-sm"
                 >
                   {title}

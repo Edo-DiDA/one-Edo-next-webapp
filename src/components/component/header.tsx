@@ -1,8 +1,11 @@
 "use client";
-import { Logo, LogoText } from "@/assets/vectors";
-import { SubmenuType } from "@/types/content";
 import Link from "next/link";
+import Image from "next/image";
 import React, { useState } from "react";
+
+import { Logo } from "@/assets/vectors";
+import { EdoLogo } from "@/assets/images";
+import { SubmenuType } from "@/types/content";
 
 import MenuButton from "../contents/menu-button";
 
@@ -18,17 +21,16 @@ const Header = ({ links }: HeaderProps) => {
   };
 
   return (
-    <header className="flex justify-between items-center text-gray-800 p-4  xl:pl-0 md:pr-14 md:gap-[70%]">
-      <Link
-        href="/"
-        className="text-neutral-50 font-bold text-md md:text-xl md:flex md:flex-row"
-      >
+    <header className="flex justify-between md:items-center md:flex-row items-center text-gray-800 p-4 md:w-[45%] xl:pl-0">
+      <Link href="/" className="flex flex-row items-center">
         <Logo />
-        <div className="hidden md:block">
-          <LogoText />
-        </div>
+        <Image
+          src={EdoLogo}
+          alt="one edo logo"
+          className="w-[105px] h-[36px] md:w-[141px] md:h-[42px]"
+        />
       </Link>
-      <div className="hidden md:flex text-white">
+      <div className="hidden md:block text-white">
         <Link href="#services" className="hover:underline">
           Services
         </Link>

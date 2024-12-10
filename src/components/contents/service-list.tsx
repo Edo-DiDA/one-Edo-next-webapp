@@ -18,7 +18,7 @@ const ServiceList = ({ services }: ServiceListProp) => {
           <Link
             href={`/services/${page?.slug}`}
             key={index}
-            className="h-[208px] md:hover:border-b-2 md:hover:border-primary-500 rounded mb-4 bg-neutral-100 md:bg-neutral-100 w-[45%] md:w-[30%] md:hover:bg-black mr-4 p-4 flex flex-col justify-between md:active:bg-primary-50 active:bg-primary-50"
+            className="h-[208px] md:hover:border-b-2 md:hover:border-primary-500 rounded mb-4 bg-neutral-100 md:bg-neutral-100 w-[45%] md:w-[30%] md:hover:bg-transparent mr-4 p-4 flex flex-col justify-between md:active:bg-primary-50 active:bg-primary-50"
           >
             <div>
               <h6 className="text-sm font-medium text-primary-800 md:active:text-primary-800 md:hover:text-primary-500 active:text-primary-800 md:text-lg md:font-semibold">
