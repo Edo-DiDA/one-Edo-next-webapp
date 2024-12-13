@@ -15,10 +15,13 @@ const ServicesPage = async ({ params }: ServicePageProps) => {
   const content = await getPageFromSlug(slug.service);
   return (
     <>
-      <div className=" lg:mx-auto lg:max-w-5xl">
-        {content?.breadcrumbs?.length > 0 && (
-          <Breadcrumbs items={content.breadcrumbs} />
-        )}
+      <div className=" lg:mx-auto ">
+        <div className=" lg:max-w-5xl">
+          {" "}
+          {content?.breadcrumbs?.length > 0 && (
+            <Breadcrumbs items={content.breadcrumbs} />
+          )}
+        </div>
         <div className="lg:flex  ">
           <TopSection
             title={content.description}
