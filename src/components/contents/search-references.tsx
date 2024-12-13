@@ -9,7 +9,7 @@ type RefrencesProp = {
 
 const SearchReferences = ({ items }: RefrencesProp) => {
   return (
-    <div className="pb-10 lg:mx-auto  lg:max-w-5xl">
+    <div className="pb-10   ">
       {items && items?.length > 1 ? (
         <div className="h-auto px-4 pt-6 -mb-6 lg:py-20 md:w-[70%]  lg:max-w-4xl ">
           {items.map((item) => (
