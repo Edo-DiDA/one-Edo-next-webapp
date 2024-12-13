@@ -13,7 +13,7 @@ export const isNotLastOnList = (index: number, listLength: number) => {
 export const getSuggestionConfig = () => ({
   service: {
     title: "text-primary-800 text-sm font-bold",
-    bg: "bg-primary-50 lg:pl-4 md:w-[50%]",
+    bg: "bg-primary-50  w-full lg:pl-4 md:w-[50%]",
     little: "text-secondary-500",
     btn: "bg-primary-400 ",
   },
@@ -34,7 +34,7 @@ export const getSuggestionConfig = () => ({
 export const getTopSectionConfig = () => ({
   service: {
     title: "text-primary-800 text-md md:text-5xl ",
-    bg: "bg-neutral-100 lg:pl-20 xl:pl-40  lg:w-[40%] lg:ml-auto ",
+    bg: "bg-neutral-100 lg:pl-20 xl:pl-40  lg:w-[40%]  ",
     little: "text-secondary-500 ",
     btn: "bg-primary-400",
   },
