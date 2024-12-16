@@ -24,24 +24,24 @@ const Suggestions = ({
 
   return (
     <div
-      className={`h-auto p-4 md:py-20 lg:pr-20  xl:pr-48 ${config[pageType].bg}`}
+      className={`h-auto p-4 md:py-20 lg:pr-20 w-full lg:flex-1 lg:w-auto xl:pr-48 lg:pl-4 ${config[pageType].bg}`}
     >
       {showTitle && (
         <h6 className={`mb-3 ${config[pageType].title}`}>{title}</h6>
       )}
       {body && (
         <p
-          className={`hidden mt-2 text-sm lg:text-2xl font-semibold md:block lg:pb-[19px]  ${config[pageType].little}`}
+          className={`hidden mt-2 text-sm lg:text-2xl font-semibold lg:block lg:pb-[19px] text-center lg:text-left ${config[pageType].little}`}
         >
           {body}
         </p>
       )}
-      <div className="flex flex-row flex-wrap -mb-3 -mr-3">
+      <div className="flex flex-row md:justify-center flex-wrap lg:justify-start -mb-3 -mr-3">
         {items?.map(({ title, page }, index) => (
           <button
             key={index}
             onClick={() => router.push(`/articles/${page?.slug}`)}
-            className={`h-[40px] rounded ${config[pageType].btn} px-3 text-neutral-50 mr-3 mb-3 truncate active:bg-primary-500`}
+            className={`h-[40px] rounded ${config[pageType].btn} px-3 text-neutral-50 mr-3 mb-3 truncate border border-transparent   active:bg-primary-500`}
           >
             {title}
           </button>

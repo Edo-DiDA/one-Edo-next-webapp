@@ -44,6 +44,7 @@ export const getSearch = async (searchTerm: string): Promise<SearchType[]> => {
   )}`;
   const res = await fetch(url);
   const data = await res.json();
+  
   return data.data;
 };
 
@@ -51,5 +52,6 @@ export const getServices = async (): Promise<SubmenuType[]> => {
   const url = `${baseUrl}/categories/home?populate[submenus][on][shared.service-page][populate][page][fields][0]=name&populate[submenus][on][shared.service-page][populate][page][fields][1]=slug`;
   const res = await fetch(url);
   const data = await res.json();
+  
   return data.data?.submenus;
 };
