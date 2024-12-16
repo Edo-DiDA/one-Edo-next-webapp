@@ -18,7 +18,7 @@ export const getSuggestionConfig = () => ({
     btn: "bg-primary-400 ",
   },
   home: {
-    title: "text-xs text-white font-light ",
+    title: "text-xs text-white font-light",
     bg: "bg-primary-600 lg:pl-0 max-w-[440px]",
     little: "text-white",
     btn: "text-white bg-primary-700 hover:border-primary-200",
