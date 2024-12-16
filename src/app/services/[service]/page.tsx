@@ -15,17 +15,21 @@ const ServicesPage = async ({ params }: ServicePageProps) => {
   const content = await getPageFromSlug(slug.service);
   return (
     <>
-      {content?.breadcrumbs?.length > 0 && (
-        <Breadcrumbs items={content.breadcrumbs} />
-      )}
-      <div className="md:flex">
-        <TopSection
-          title={content.description}
-          body={content.shortDescription || ""}
-        />
-        <Suggestions items={content?.popularsuggestion} />
+      <div className="">
+        <div className=" ">
+          {content?.breadcrumbs?.length > 0 && (
+            <Breadcrumbs items={content.breadcrumbs} />
+          )}
+        </div>
+        <div className="lg:flex">
+          <TopSection
+            title={content.description}
+            body={content.shortDescription || ""}
+          />
+          <Suggestions items={content?.popularsuggestion} />
+        </div>
+        <References showNew items={content?.submenus} />
       </div>
-      <References showNew items={content?.submenus} />
       <Footer />
     </>
   );

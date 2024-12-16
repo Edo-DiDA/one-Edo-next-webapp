@@ -12,7 +12,7 @@ const Home = async () => {
 
   return (
     <ContentLayout>
-      <div className="md:flex ">
+      <div className="lg:flex  lg:justify-center lg:mx-auto bg-primary-600">
         <TopSection
           content="home"
           title={content?.description}

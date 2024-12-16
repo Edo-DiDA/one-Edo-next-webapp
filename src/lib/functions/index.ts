@@ -13,15 +13,15 @@ export const isNotLastOnList = (index: number, listLength: number) => {
 export const getSuggestionConfig = () => ({
   service: {
     title: "text-primary-800 text-sm font-bold",
-    bg: "bg-primary-50 lg:pl-4 md:w-[50%]",
+    bg: "bg-primary-50",
     little: "text-secondary-500",
-    btn: "bg-primary-400",
+    btn: "bg-primary-400 ",
   },
   home: {
-    title: "text-xs text-white font-light ",
-    bg: "bg-primary-600 lg:pl-0",
+    title: "text-xs text-white font-light",
+    bg: "bg-primary-600 lg:pl-0 max-w-[440px]",
     little: "text-white",
-    btn: "text-white bg-primary-700",
+    btn: "text-white bg-primary-700 hover:border-primary-200",
   },
   search: {
     title: "text-xs text-white font-light ",
@@ -33,20 +33,21 @@ export const getSuggestionConfig = () => ({
 
 export const getTopSectionConfig = () => ({
   service: {
-    title: "text-primary-800 text-md md:text-5xl ",
-    bg: "  bg-neutral-100 md:w-[50%]",
+    title: "text-primary-800 text-md md:text-5xl",
+    bg: "bg-neutral-100 lg:pl-20 xl:pl-40",
     little: "text-secondary-500 ",
     btn: "bg-primary-400",
   },
   home: {
-    title: "text-neutral-50 lg:w-3/6 text-md md:text-5xl",
-    bg: "bg-primary-600",
-    little: "text-neutral-100 md:hidden",
+    title:
+      "text-neutral-50 lg:w-3/6 text-lg md:text-xl text-center lg:text-left",
+    bg: "flex flex-row lg:pl-20 xl:pl-40 lg:w-[50%] lg:text-left ",
+    little: "text-neutral-100 lg:hidden text-center ",
     btn: "bg-primary-700",
   },
   search: {
     title: "text-primary-800 text-[28px]",
-    bg: "  bg-neutral-100 ",
+    bg: "lg:mx-auto lg:max-w-5xl",
     little: "text-primary-800",
     btn: "bg-primary-400",
   },

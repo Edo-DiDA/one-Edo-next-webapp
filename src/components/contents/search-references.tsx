@@ -9,9 +9,9 @@ type RefrencesProp = {
 
 const SearchReferences = ({ items }: RefrencesProp) => {
   return (
-    <div className="pb-10">
+    <div className="pb-10   ">
       {items && items?.length > 1 ? (
-        <div className="h-auto px-4 pt-6 -mb-6 lg:py-20 lg:px-20 xl:px-40 ">
+        <div className="h-auto px-4 pt-6 -mb-6 lg:py-20 md:w-[70%]  lg:max-w-4xl ">
           {items.map((item) => (
             <Link
               href={`/articles/${item?.slug}`}
@@ -34,7 +34,7 @@ const SearchReferences = ({ items }: RefrencesProp) => {
           ))}
         </div>
       ) : (
-        <div className="px-4 pt-6 bg-neutral-50 md:w-full md:flex md:flex-col md:justify-center md:items-center md:h-[385px]">
+        <div className="px-4 pt-6 bg-neutral-50 md:w-full md:flex md:flex-col md:justify-center md:items-center  md:h-[385px]">
           <p className="text-xs font-light text-primary-800 mb-4">
             Unfortunately, we do not have any information on your search request
             at the moment.

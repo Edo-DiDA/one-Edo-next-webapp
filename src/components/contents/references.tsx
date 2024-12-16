@@ -11,7 +11,7 @@ type RefrencesProp = {
 
 const References = ({ items }: RefrencesProp) => {
   return (
-    <div className="h-auto px-4 pt-6 pb-10 -mb-6 lg:py-20 lg:px-20 xl:px-40 ">
+    <div className="h-auto px-4 pt-6 pb-10 -mb-6 lg:py-20 lg:px-20 xl:px-40 lg:mx-auto  lg:max-w-5xl">
       {items?.map(({ id, page, article, __component }) => (
         <Link
           href={buildReferenceUrl(article?.slug || page?.slug, __component)}

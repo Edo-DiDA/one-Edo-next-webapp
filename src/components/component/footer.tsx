@@ -16,10 +16,10 @@ const otherNavs = [
 
 const Footer = () => {
   return (
-    <footer className="h-[438px]  bg-primary-900 py-10 px-4 md:py-20 lg:pl-20 xl:pl-40 ">
-      <div className="flex flex-col  md:flex-row-reverse md:justify-end md:gap-[20%]">
-        <div className="flex flex-col  md:flex-row justify-between md:gap-[30%]">
-          <div className="md:w-[450px]">
+    <footer className="h-[438px]  bg-primary-900 py-10 px-4 md:py-20 lg:pl-20 xl:pl-40  ">
+      <div className="flex flex-col  md:flex-row-reverse md:justify-end md:gap-[15%] lg:mx-auto lg:max-w-5xl">
+        <div className="flex flex-col  md:flex-row justify-between md:gap-[10%] lg:gap-[20%]">
+          <div className="md:w-[300px] lg:w-[400px]">
             <h4 className="text-white font-bold text-sm mb-3">Services</h4>
             <ul className="list-none pb-4 border-b-[0.5px] md:border-none border-neutral-800">
               {bottomNav.map(({ name, link }, index) => (
@@ -35,7 +35,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <ul className="list-none pb-4 -mb-4 border-neutral-800 mt-6 md:mt-0 md:w-[300px]">
+            <ul className="list-none pb-4 -mb-4 border-neutral-800 mt-6 md:mt-0 md:w-[200px] lg:w-[200px]">
               {otherNavs.map(({ name, link }, index) => (
                 <li
                   className={

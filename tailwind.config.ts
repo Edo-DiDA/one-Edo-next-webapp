@@ -6,7 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  safelist: ["bg-neutral-100", "bg-primary-700", "bg-primary-400"],
+  safelist: ["bg-neutral-100", "bg-primary-700", "bg-primary-400","text-4xl","text-5xl" ],
   theme: {
     extend: {
       typography: {
@@ -36,7 +36,9 @@ const config: Config = {
         sm: ["1.125rem", { lineHeight: "1.75rem" }],
         md: ["1.25rem", { lineHeight: "1.75rem" }],
         lg: ["1.5rem", { lineHeight: "1.5rem" }],
-        xl: ["3rem", { lineHeight: "3.625rem" }],
+        xl: ["3rem", { lineHeight: "3.625rem" }],//48px
+        xxl: ["2.25rem", { lineHeight: "3.625rem" }], //36px
+       
       },
       boxShadow: {
         news: "0px 1px 2px 0px rgba(0, 0, 0, 0.10)",
