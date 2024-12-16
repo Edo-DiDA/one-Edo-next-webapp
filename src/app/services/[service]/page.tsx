@@ -21,7 +21,7 @@ const ServicesPage = async ({ params }: ServicePageProps) => {
             <Breadcrumbs items={content.breadcrumbs} />
           )}
         </div>
-        <div className="lg:flex  ">
+        <div className="lg:flex">
           <TopSection
             title={content.description}
             body={content.shortDescription || ""}

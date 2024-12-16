@@ -24,7 +24,7 @@ const Suggestions = ({
 
   return (
     <div
-      className={`h-auto p-4 md:py-20 lg:pr-20  xl:pr-48  lg:max-w-2xl  ${config[pageType].bg}`}
+      className={`h-auto p-4 md:py-20 lg:pr-20 w-full lg:flex-1 lg:w-auto xl:pr-48 lg:pl-4 ${config[pageType].bg}`}
     >
       {showTitle && (
         <h6 className={`mb-3 ${config[pageType].title}`}>{title}</h6>

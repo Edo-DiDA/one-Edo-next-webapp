@@ -13,7 +13,7 @@ export const isNotLastOnList = (index: number, listLength: number) => {
 export const getSuggestionConfig = () => ({
   service: {
     title: "text-primary-800 text-sm font-bold",
-    bg: "bg-primary-50  w-full lg:pl-4 md:w-[50%]",
+    bg: "bg-primary-50",
     little: "text-secondary-500",
     btn: "bg-primary-400 ",
   },
@@ -33,20 +33,21 @@ export const getSuggestionConfig = () => ({
 
 export const getTopSectionConfig = () => ({
   service: {
-    title: "text-primary-800 text-md md:text-5xl ",
-    bg: "bg-neutral-100 lg:pl-20 xl:pl-40  lg:w-[40%]  ",
+    title: "text-primary-800 text-md md:text-5xl",
+    bg: "bg-neutral-100 lg:pl-20 xl:pl-40",
     little: "text-secondary-500 ",
     btn: "bg-primary-400",
   },
   home: {
-    title: " text-neutral-50 lg:w-3/6 text-lg md:text-xl  text-center lg:text-left",
+    title:
+      "text-neutral-50 lg:w-3/6 text-lg md:text-xl text-center lg:text-left",
     bg: "flex flex-row lg:pl-20 xl:pl-40 lg:w-[50%] lg:text-left ",
     little: "text-neutral-100 lg:hidden text-center ",
     btn: "bg-primary-700",
   },
   search: {
     title: "text-primary-800 text-[28px]",
-    bg: "  lg:mx-auto lg:max-w-5xl ",
+    bg: "lg:mx-auto lg:max-w-5xl",
     little: "text-primary-800",
     btn: "bg-primary-400",
   },
