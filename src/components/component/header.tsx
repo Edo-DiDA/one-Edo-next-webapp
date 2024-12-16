@@ -8,7 +8,7 @@ import { EdoLogo } from "@/assets/images";
 import { ContentType, SubmenuType } from "@/types/content";
 
 import MenuButton from "../contents/menu-button";
-import { getPageFromSlug, getServices } from "@/lib/functions/get-service";
+import { getPageFromSlug } from "@/lib/functions/get-service";
 
 type HeaderProps = {
   links: SubmenuType[];
