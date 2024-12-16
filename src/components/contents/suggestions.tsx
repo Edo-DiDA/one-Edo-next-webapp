@@ -36,7 +36,7 @@ const Suggestions = ({
           {body}
         </p>
       )}
-      <div className="flex flex-row justify-center flex-wrap lg:justify-start -mb-3 -mr-3">
+      <div className="flex flex-row md:justify-center flex-wrap lg:justify-start -mb-3 -mr-3">
         {items?.map(({ title, page }, index) => (
           <button
             key={index}

@@ -56,7 +56,7 @@ const SearchBar = () => {
           onFocus={handleFocus}
           onBlur={handleBlur}
           placeholder="What do you need?"
-          className="caret-neutral-50 text-neutral-50 text-xs font-light bg-inherit placeholder-neutral-200 ml-[12px] h-11 w-full lg:w-[400px] focus:outline-none"
+          className="caret-neutral-50 text-neutral-50 text-xs font-light bg-inherit placeholder-neutral-200 ml-[12px] h-11 flex-1 lg:w-[400px] focus:outline-none"
         />{" "}
         {search && (
           <button
