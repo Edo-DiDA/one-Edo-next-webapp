@@ -9,9 +9,9 @@ type RefrencesProp = {
 
 const SearchReferences = ({ items }: RefrencesProp) => {
   return (
-    <div className="pb-10   ">
+    <div className="pb-10 lg:mx-auto  lg:max-w-5xl  ">
       {items && items?.length > 1 ? (
-        <div className="h-auto px-4 pt-6 -mb-6 lg:py-20 md:w-[70%]  lg:max-w-4xl ">
+        <div className="h-auto px-4 pt-6 -mb-6 lg:py-20 md:w-[70%]  lg:max-w-2xl ">
           {items.map((item) => (
             <Link
               href={`/articles/${item?.slug}`}
@@ -34,14 +34,15 @@ const SearchReferences = ({ items }: RefrencesProp) => {
           ))}
         </div>
       ) : (
-        <div className="px-4 pt-6 bg-neutral-50 md:w-full md:flex md:flex-col md:justify-center md:items-center  md:h-[385px]">
-          <p className="text-xs font-light text-primary-800 mb-4">
+        <div className="px-4 pt-6 bg-neutral-50 md:w-full md:flex md:flex-col text-center md:justify-center md:items-center  md:h-[385px]">
+          <p className="text-[22px] font-semibold text-primary-800 mb-4">
             Unfortunately, we do not have any information on your search request
             at the moment.
           </p>
 
-          <p className="text-xs font-light text-primary-800">
-            We are currently working on providing you with this service.
+          <p className="text-[20px] font-light text-primary-800 pt-5">
+            We are currently working on providing you with this service. Please
+            check back later
           </p>
         </div>
       )}

@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 import { ChevronDownWhite, Logo } from "@/assets/vectors";
 import { EdoLogo } from "@/assets/images";
@@ -19,11 +20,16 @@ const Header = ({ links }: HeaderProps) => {
   const [isServiceOpen, setIsServiceOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const serviceModalRef = useRef<HTMLDivElement | null>(null); // Ref for service modal
+  const serviceModalRef = useRef<HTMLDivElement | null>(null);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsServiceOpen(false);
+  }, [pathname]);
 
   const toggleServiceModal = () => {
     if (isServiceOpen) {
-      setIsServiceOpen(false);
+      setIsServiceOpen((prev) => !prev);
       return;
     }
     setIsServiceOpen(true);
@@ -33,8 +39,8 @@ const Header = ({ links }: HeaderProps) => {
         serviceModalRef.current &&
         !serviceModalRef.current.contains(e.target as Node)
       ) {
-        setIsServiceOpen(false); // Close the modal if clicked outside
-        document.removeEventListener("mousedown", handleOutsideClick); // Cleanup listener
+        setIsServiceOpen(false);
+        document.removeEventListener("mousedown", handleOutsideClick);
       }
     };
 
@@ -61,7 +67,7 @@ const Header = ({ links }: HeaderProps) => {
       </Link>
 
       {/* Desktop Services Link */}
-      <div className="hidden md:block text-white">
+      <div className="hidden md:block relative text-white">
         <button
           className="hover:border-b items-center flex gap-2 hover:pb-2 focus:border-b focus:pb-2 active:text-primary-400 active:border-b active:border-primary-400 active:pb-2"
           onClick={toggleServiceModal}
@@ -69,56 +75,55 @@ const Header = ({ links }: HeaderProps) => {
           <p className=""> Services </p>
           <ChevronDownWhite />
         </button>
-      </div>
-
-      {isServiceOpen && (
-        <div
-          className="absolute top-24 left-56 flex items-center justify-center z-50"
-          ref={serviceModalRef}
-        >
+        {isServiceOpen && (
           <div
-            className="flex w-[800px] relative "
-            onClick={(e) => e.stopPropagation()}
+            className="absolute top-10 left-[-150px] lg:left-[-250px] flex items-center justify-center z-50"
+            ref={serviceModalRef}
           >
-            <div className="bg-primary-50 relative w-[50%] pb-5 p-2">
-              <div className="flex flex-col text-primary-800">
-                {links.map(({ id, page }) => (
-                  <Link
-                    key={id}
-                    href={`/services/${page?.slug}`}
-                    className="py-4 px-6 text-left hover:bg-primary-800 hover:text-white rounded-md"
-                    onMouseEnter={() =>
-                      handleMouseEnter((page?.name || "").toLowerCase())
-                    }
-                  >
-                    {page?.name}
-                  </Link>
-                ))}
+            <div
+              className="flex w-[500px] lg:w-[800px] relative "
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="bg-primary-50 relative w-[50%] pb-5 p-2">
+                <div className="flex flex-col text-primary-800">
+                  {links.map(({ id, page }) => (
+                    <Link
+                      key={id}
+                      href={`/services/${page?.slug}`}
+                      className="py-4 px-6 text-left hover:bg-primary-800 hover:text-white rounded-md"
+                      onMouseEnter={() =>
+                        handleMouseEnter((page?.name || "").toLowerCase())
+                      }
+                    >
+                      {page?.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-primary-600 text-white w-[50%] p-6">
+                {content?.submenus && content.submenus.length > 0 && (
+                  <div>
+                    <div className="font-semibold text-[22px]">
+                      {content.name}
+                    </div>
+                    <div className="flex flex-col">
+                      {content.submenus.map((submenu) => (
+                        <Link
+                          key={submenu.id}
+                          href={`/services/${submenu.page?.slug}`}
+                          className="block text-left py-2  hover:underline"
+                        >
+                          {submenu.page?.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
-            <div className="bg-primary-600 text-white w-[50%] p-6">
-              {content?.submenus && content.submenus.length > 0 && (
-                <div>
-                  <div className="font-semibold text-[22px]">
-                    {content.name}
-                  </div>
-                  <div className="flex flex-col">
-                    {content.submenus.map((submenu) => (
-                      <Link
-                        key={submenu.id}
-                        href={`/services/${submenu.page?.slug}`}
-                        className="block text-left py-2  hover:underline"
-                      >
-                        {submenu.page?.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
 
       {/* Mobile Menu */}
       <div className="md:hidden flex items-center gap-5">

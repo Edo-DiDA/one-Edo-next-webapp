@@ -26,15 +26,17 @@ const ServicesPage = async ({ params }: ArticlesPageProps) => {
 
   return (
     <>
-      {data?.breadcrumbs?.length > 0 && (
-        <Breadcrumbs items={data.breadcrumbs} />
-      )}
+      <div className="max-w-5xl  mx-auto">
+        {data?.breadcrumbs?.length > 0 && (
+          <Breadcrumbs items={data.breadcrumbs} />
+        )}
+      </div>
       <div className="md:flex ">
         <TopSection title={data.title} body={data.description || ""} />
         <AudienceInfo content={whoisthisfor} />
       </div>
 
-      <div className="md:flex md:py-20 lg:pl-20 xl:pl-40">
+      <div className="md:flex md:gap-2 md:py-20 lg:pl-20 xl:pl-0 max-w-5xl  mx-auto">
         <div className="md:w-[50%]">
           <div className="py-6 px-4 border-b border-neutral-200">
             <p className="text-md text-primary-800 font-bold pb-3">
