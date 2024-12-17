@@ -10,7 +10,7 @@ type BreadcrumbsProps = {
 
 const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
   return (
-    <div className="h-[72px] px-4 flex items-center lg:pl-20 xl:pl-40">
+    <div className="h-[72px] px-4 flex items-center lg:pl-20 xl:pl-0">
       <div className="hidden md:flex lg:flex flex-row items-center h-full">
         {items?.length > 0 &&
           items.map(({ id, page }, index) => (

@@ -39,7 +39,7 @@ export const getHtmlContent = async (content: string) => {
 };
 
 export const getSearch = async (searchTerm: string): Promise<SearchType[]> => {
-  const url = `${baseUrl}/articles?filters[title][$contains]=${encodeURIComponent(
+  const url = `${baseUrl}/articles?filters[title][$containsi]=${encodeURIComponent(
     searchTerm
   )}`;
   const res = await fetch(url);

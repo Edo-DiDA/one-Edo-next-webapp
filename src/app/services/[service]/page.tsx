@@ -16,7 +16,7 @@ const ServicesPage = async ({ params }: ServicePageProps) => {
   return (
     <>
       <div className="">
-        <div className=" ">
+        <div className="max-w-5xl mx-auto ">
           {content?.breadcrumbs?.length > 0 && (
             <Breadcrumbs items={content.breadcrumbs} />
           )}

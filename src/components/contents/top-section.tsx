@@ -11,7 +11,7 @@ const TopSection = ({ title, body, content = "service" }: TopSectionProps) => {
   const config = getTopSectionConfig();
   return (
     <div
-      className={`min-h-[124px] md:py-20 lg:flex lg:flex-col lg:items-end lg:flex-1 ${config[content].bg} p-4`}
+      className={`min-h-[124px] md:py-20 lg:flex lg:flex-col  lg:flex-1 ${config[content].bg} p-4`}
     >
       <div className="">
         <h2 className={`font-bold w-5/6 lg:w-auto ${config[content].title}`}>
