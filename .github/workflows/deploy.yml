@@ -23,7 +23,7 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: |
-          npm install
+          yarn install
 
       # Step 4: Deploy to server using SSH
       - name: Deploy to server
@@ -41,10 +41,10 @@ jobs:
             git pull origin datacntr
 
             # Install the latest dependencies
-            npm install
+            yarn install
 
             # Build the app
-            npm run build
+            yarn run build
 
             # Restart the app using PM2
             pm2 start ecosystem.config.js

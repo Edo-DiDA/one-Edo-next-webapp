@@ -4,7 +4,7 @@ module.exports = {
   apps: [
     {
       name: "oneedoweb",
-      script: "npm",
+      script: "yarn",
       args: "start",
       instances: "max",
       exec_mode: "cluster",
