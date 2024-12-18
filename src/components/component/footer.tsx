@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 import { isNotLastOnList } from "@/lib/functions";
+import Image from "next/image";
+import { FooterLogo } from "@/assets/images";
 
 const bottomNav = [
   { name: "Work", link: "work" },
@@ -16,49 +18,57 @@ const otherNavs = [
 
 const Footer = () => {
   return (
-    <footer className="h-[438px]  bg-primary-900 py-10 px-4 md:py-20 lg:pl-20 xl:pl-40  ">
-      <div className="flex flex-col  md:flex-row-reverse md:justify-end md:gap-[15%] lg:mx-auto lg:max-w-5xl">
-        <div className="flex flex-col  md:flex-row justify-between md:gap-[10%] lg:gap-[20%]">
-          <div className="md:w-[300px] lg:w-[400px]">
-            <h4 className="text-white font-bold text-sm mb-3">Services</h4>
-            <ul className="list-none pb-4 border-b-[0.5px] md:border-none border-neutral-800">
-              {bottomNav.map(({ name, link }, index) => (
-                <li className="mb-4" key={index}>
-                  <Link
-                    href={`/services/${link}`}
-                    className="text-xxs text-white font-light"
-                  >
-                    {name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <ul className="list-none pb-4 -mb-4 border-neutral-800 mt-6 md:mt-0 md:w-[200px] lg:w-[200px]">
-              {otherNavs.map(({ name, link }, index) => (
-                <li
-                  className={
-                    isNotLastOnList(index, otherNavs.length) ? "mb-4" : "mb-0"
-                  }
-                  key={index}
-                >
-                  <Link
-                    href={`/services/${link}`}
-                    className="text-xxs text-white font-light"
-                  >
-                    {name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div>
-          <p className="text-md text-bold text-neutral-50 mt-6 md:text-5xl">
-            oneEdo
-          </p>
-        </div>
+    <footer className="flex-col px-4 flex h-[438px] md:h-[266px] lg:h-[266px] lg:flex md:flex md:flex-row md:px-[40px] lg:flex-row md:justify-between lg:justify-between md:items-start lg:items-start bg-primary-900 lg:px-[240px] py-10">
+      <div className="flex items-center hidden md:block">
+        <Image
+          src={FooterLogo}
+          alt="one edo logo"
+          className="lg:w-[240px] lg:h-[72px] md:w-[150px] md:h-[45px]"
+        />
+      </div>
+
+      <div className="">
+        <h4 className="text-white font-bold text-sm mb-3">Services</h4>
+        <ul className="list-none -pb-4 border-b-[0.5px] md:border-none border-neutral-800">
+          {bottomNav.map(({ name, link }, index) => (
+            <li className="mb-4" key={index}>
+              <Link
+                href={`/services/${link}`}
+                className="text-xxs text-white font-light"
+              >
+                {name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <ul className="list-none pb-4 -mb-4 border-neutral-800 mt-6 md:mt-0 md:w-auto lg:w-auto">
+          {otherNavs.map(({ name, link }, index) => (
+            <li
+              className={
+                isNotLastOnList(index, otherNavs.length) ? "mb-4" : "mb-0"
+              }
+              key={index}
+            >
+              <Link
+                href={`/services/${link}`}
+                className="text-xxs text-white font-light"
+              >
+                {name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="lg:hidden md:hidden pt-[33px]">
+        <Image
+          src={FooterLogo}
+          alt="one edo logo"
+          className="w-[150px] h-[45px]"
+        />
       </div>
     </footer>
   );

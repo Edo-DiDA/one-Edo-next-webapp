@@ -6,7 +6,13 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  safelist: ["bg-neutral-100", "bg-primary-700", "bg-primary-400","text-4xl","text-5xl" ],
+  safelist: [
+    "bg-neutral-100",
+    "bg-primary-700",
+    "bg-primary-400",
+    "text-4xl",
+    "text-5xl",
+  ],
   theme: {
     extend: {
       typography: {
@@ -35,10 +41,11 @@ const config: Config = {
         xs: ["1rem", { lineHeight: "1.5rem" }],
         sm: ["1.125rem", { lineHeight: "1.75rem" }],
         md: ["1.25rem", { lineHeight: "1.75rem" }],
+        mdd: ["1.375rem", { lineHeight: "1.65rem" }],
         lg: ["1.5rem", { lineHeight: "1.5rem" }],
-        xl: ["3rem", { lineHeight: "3.625rem" }],//48px
+        xl: ["3rem", { lineHeight: "3.625rem" }], //48px
         xxl: ["2.25rem", { lineHeight: "3.625rem" }], //36px
-       
+        xxxl: ["2.5rem", { lineHeight: "3rem" }], //40px
       },
       boxShadow: {
         news: "0px 1px 2px 0px rgba(0, 0, 0, 0.10)",
