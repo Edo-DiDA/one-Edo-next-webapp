@@ -86,11 +86,11 @@ const Header = ({ links }: HeaderProps) => {
 
         {isServiceOpen && (
           <div
-            className="absolute top-10 left-[-150px] lg:left-[-250px] flex items-center justify-center z-50"
+            className="border shadow-lg border-primary-500 absolute m-auto inset-0 top-56 w-[800px] h-[320px]  flex items-center justify-center z-50"
             ref={serviceModalRef}
           >
             <div
-              className="flex w-[500px] lg:w-[800px] relative "
+              className="flex w-[500px] lg:w-[800px] h-full relative"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="bg-primary-50 relative w-[50%] pb-5 p-2">
