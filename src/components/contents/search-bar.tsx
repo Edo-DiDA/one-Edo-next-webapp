@@ -39,9 +39,9 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex lg:h-[80px] lg:flex lg:items-center">
       <div
-        className={`bg-top-search flex flex-row w-full h-full items-center rounded pl-3 ${
+        className={`bg-top-search flex flex-row lg:h-[44px] w-full h-full items-center rounded pl-3 ${
           isSearchBarActive
             ? "border-b-2 border-neutral-50"
             : "border-b border-transparent"
@@ -56,7 +56,7 @@ const SearchBar = () => {
           onFocus={handleFocus}
           onBlur={handleBlur}
           placeholder="What do you need?"
-          className="caret-neutral-50 text-neutral-50 text-xs font-light bg-inherit placeholder-neutral-200 ml-[12px] h-11 flex-1 lg:w-[400px] focus:outline-none"
+          className="caret-neutral-50 text-neutral-50 text-xs font-light bg-inherit placeholder-neutral-200 ml-[12px] lg:h-full h-11 flex-1 lg:w-[400px] focus:outline-none"
         />{" "}
         {search && (
           <button

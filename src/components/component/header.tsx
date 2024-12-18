@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { ChevronDownWhite, Logo } from "@/assets/vectors";
 import { EdoLogo } from "@/assets/images";
@@ -16,6 +16,7 @@ type HeaderProps = {
 };
 
 const Header = ({ links }: HeaderProps) => {
+  const router = useRouter();
   const [content, setContent] = useState<ContentType | null>(null);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,19 +56,26 @@ const Header = ({ links }: HeaderProps) => {
   };
 
   return (
-    <header className="flex justify-between items-center p-4 text-gray-800 md:flex-row md:items-center md:w-[45%] xl:pl-0 ">
+    <header className="pt-[10px] md:pt-0 lg:pt-0 lg:mb-0 mb-[18px] flex justify-between md:h-[64px] lg:h-full items-center text-gray-800 lg:w-[50%] md:w-[100%] md:mb-[18px] md:flex-row xl:pl-0">
       {/* Logo and Home Link */}
-      <Link href="/" className="flex items-center">
+      <Link href="/" className="md:w-[165px] md:h-[44px] flex items-center">
         <Logo />
         <Image
           src={EdoLogo}
           alt="one edo logo"
-          className="w-[105px] h-[36px] md:w-[141px] md:h-[42px]"
+          className="w-[105px] h-[36px] md:w-[121px] md:h-[42px]"
         />
       </Link>
 
       {/* Desktop Services Link */}
-      <div className="hidden md:block relative text-white">
+      <div className="hidden md:hidden lg:flex lg:h-full lg:items-center text-white">
+        <button
+          className="hover:border-b text-white lg:mr-10 hover:pb-2 active:text-primary-400 "
+          onClick={() => router.push("/")}
+        >
+          Home
+        </button>
+
         <button
           className="hover:border-b items-center flex gap-2 hover:pb-2 focus:border-b focus:pb-2 active:text-primary-400 active:border-b active:border-primary-400 active:pb-2"
           onClick={toggleServiceModal}
@@ -75,13 +83,14 @@ const Header = ({ links }: HeaderProps) => {
           <p className=""> Services </p>
           <ChevronDownWhite />
         </button>
+
         {isServiceOpen && (
           <div
-            className="absolute top-10 left-[-150px] lg:left-[-250px] flex items-center justify-center z-50"
+            className="border shadow-lg border-primary-500 absolute m-auto inset-0 top-56 w-[800px] h-[320px]  flex items-center justify-center z-50"
             ref={serviceModalRef}
           >
             <div
-              className="flex w-[500px] lg:w-[800px] relative "
+              className="flex w-[500px] lg:w-[800px] h-full relative"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="bg-primary-50 relative w-[50%] pb-5 p-2">
@@ -126,7 +135,7 @@ const Header = ({ links }: HeaderProps) => {
       </div>
 
       {/* Mobile Menu */}
-      <div className="md:hidden flex items-center gap-5">
+      <div className="flex lg:hidden items-center gap-5">
         <MenuButton action={toggleMenu} />
 
         {isMenuOpen && (

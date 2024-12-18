@@ -11,13 +11,17 @@ const TopSection = ({ title, body, content = "service" }: TopSectionProps) => {
   const config = getTopSectionConfig();
   return (
     <div
-      className={`min-h-[124px] md:py-20 lg:flex lg:flex-col  lg:flex-1 ${config[content].bg} p-4`}
+      className={`h-auto px-4 pt-4 lg:h-[344px] md:w-full md:flex md:flex-row md:justify-center md:pt-4 lg:w-[50%] lg:flex lg:justify-start lg:pl-[240px] lg:items-center lg:flex-row ${config[content].bg}`}
     >
       <div className="">
-        <h2 className={`font-bold w-5/6 lg:w-auto ${config[content].title}`}>
+        <h2
+          className={`text-xxl text-center font-bold md:text-center md:text-xxxl lg:text-xl lg:text-left md:max-w-[528px] lg:max-w-[440px] ${config[content].title}`}
+        >
           {title}
         </h2>
-        <p className={`mt-2 text-sm font-light ${config[content].little}`}>
+        <p
+          className={`mt-2 text-center font-medium text-md md:mt-4 md:text-mdd md:text-neutral-300 md:mb-4 text-sm font-light ${config[content].little}`}
+        >
           {body}
         </p>
       </div>

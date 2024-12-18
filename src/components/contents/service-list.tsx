@@ -8,17 +8,17 @@ type ServiceListProp = {
 
 const ServiceList = ({ services }: ServiceListProp) => {
   return (
-    <div className="pt-6 px-4  mb-16 lg:mx-auto  lg:max-w-6xl">
-      <div className="lg:mx-auto ">
-        <h4 className="text-black font-medium text-xrs pb-6 md:text-xxs">
+    <div className="pt-6 mb-16 lg:mx-[240px] mx-4 md:mx-10">
+      <div className="">
+        <h4 className="text-black lg:text-mdd lg:font-medium font-medium text-xrs pb-6 md:text-xxs">
           POPULAR SERVICES
         </h4>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="lg:flex md:flex-row md:flex md:flex-wrap justify-between">
           {services.map(({ page }, index) => (
             <Link
               href={`/services/${page?.slug}`}
               key={index}
-              className="h-[208px] rounded bg-neutral-100 md:hover:bg-transparent p-4 flex flex-col justify-between active:bg-primary-50 md:active:bg-primary-50"
+              className="h-[208px] md:hover:border-b-2 md:hover:border-primary-500 mb-4 md:mb-6 lg:mb-0 md:w-[48%] w-full rounded bg-neutral-100 lg:w-[222px] md:hover:bg-transparent p-4 flex flex-col justify-between active:bg-primary-50 md:active:bg-primary-50"
             >
               <div>
                 <h6 className="text-sm font-medium text-primary-800 md:active:text-primary-800 md:hover:text-primary-500 active:text-primary-800 md:text-lg md:font-semibold">

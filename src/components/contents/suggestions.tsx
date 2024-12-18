@@ -6,15 +6,15 @@ import { useRouter } from "next/navigation";
 
 type SuggestionsProp = {
   title?: string;
+  subHeader?: string;
   showTitle?: boolean;
   pageType?: PageContent;
   items?: PopularSuggestionType[];
-  body?: string;
 };
 
 const Suggestions = ({
   items,
-  body,
+  subHeader,
   showTitle = true,
   pageType = "service",
   title = "Popular suggestions",
@@ -24,19 +24,19 @@ const Suggestions = ({
 
   return (
     <div
-      className={`h-auto p-4 md:py-20 lg:pr-20 w-full lg:flex-1 lg:w-auto xl:pr-48 lg:pl-4 ${config[pageType].bg}`}
+      className={`px-4 py-4 lg:px-0 md:flex md:justify-center lg:py-0 lg:flex-1 lg:h-[344px] md:mt-4 lg:mt-0 md:mb-4 lg:mb-0 lg:flex lg:items-start lg:flex-col lg:justify-center ${config[pageType].bg}`}
     >
       {showTitle && (
         <h6 className={`mb-3 ${config[pageType].title}`}>{title}</h6>
       )}
-      {body && (
+      {pageType === "home" && subHeader && (
         <p
-          className={`hidden mt-2 text-sm lg:text-2xl font-semibold lg:block lg:pb-[19px] text-center lg:text-left ${config[pageType].little}`}
+          className={`hidden text-sm lg:text-lg font-medium lg:block lg:pb-6 text-center lg:text-justify ${config[pageType].little}`}
         >
-          {body}
+          {subHeader}
         </p>
       )}
-      <div className="flex flex-row md:justify-center flex-wrap lg:justify-start -mb-3 -mr-3">
+      <div className="justify-center flex flex-row md:justify-center flex-wrap lg:justify-start md:w-full md:max-w-[528px] lg:max-w-[440px] -mb-3 -mr-3">
         {items?.map(({ title, page }, index) => (
           <button
             key={index}

@@ -1,3 +1,4 @@
 import EdoLogo from "./EdoLogo.png";
+import FooterLogo from "./FooterLogo.png";
 
-export { EdoLogo };
+export { FooterLogo, EdoLogo };
