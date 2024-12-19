@@ -8,18 +8,19 @@ type RefrencesProp = {
 };
 
 const SearchReferences = ({ items }: RefrencesProp) => {
+  console.log(items);
   return (
-    <div className="pb-10 lg:mx-auto  lg:max-w-5xl  ">
-      {items && items?.length > 1 ? (
-        <div className="h-auto px-4 pt-6 -mb-6 lg:py-20 md:w-[70%]  lg:max-w-2xl ">
+    <div className="pb-10 md:px-10   lg:mx-auto  lg:max-w-5xl  ">
+      {items && items?.length > 0 ? (
+        <div className="h-auto px-4 pt-6 -mb-6 lg:py-20 md:w-[70%]  md:max-w-[632px] ">
           {items.map((item) => (
             <Link
               href={`/articles/${item?.slug}`}
               key={item.id}
-              className="flex flex-row justify-between cursor-pointer border-neutral-200 border h-auto py-3 items-center px-3 mb-6 rounded"
+              className="flex flex-row justify-between cursor-pointer border-neutral-200 border h-auto py-4 items-center px-3 mb-6 rounded"
             >
               <div className="w-11/12">
-                <h3 className="text-sm font-bold text-primary-500 active:primary-800">
+                <h3 className="text-sm font-bold text-primary-500 active:primary-800 inline-block hover:border-b hover:border-primary-600">
                   {item?.title}
                 </h3>
                 {item?.description && (

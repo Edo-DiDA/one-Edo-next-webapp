@@ -13,7 +13,7 @@ const ContentLayout = async ({ children }: ContentLayoutProp) => {
   return (
     <div className="relative bg-neutral-50">
       <div className="sticky lg:h-[80px] top-0 left-0 right-0 bg-primary-600">
-        <div className="px-4 md:flex lg:h-[100%] md:w-[100%] md:px-[40px] lg:px-[240px] md:flex-col lg:flex-row md:justify-between">
+        <div className="px-4 pb-2  md:flex lg:h-[100%] md:w-[100%] md:px-[40px] lg:px-[240px] lg:pb-0 md:flex-col lg:flex-row md:justify-between">
           <Header links={data} />
           <div className="md:border-none">
             <SearchBar />

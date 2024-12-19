@@ -56,8 +56,10 @@ const SearchBar = () => {
           onFocus={handleFocus}
           onBlur={handleBlur}
           placeholder="What do you need?"
-          className="caret-neutral-50 text-neutral-50 text-xs font-light bg-inherit placeholder-neutral-200 ml-[12px] lg:h-full h-11 flex-1 lg:w-[400px] focus:outline-none"
-        />{" "}
+          className={`caret-neutral-50 text-neutral-50 text-xs font-light bg-inherit placeholder-neutral-200 ml-[12px] lg:h-full h-11 flex-1 lg:w-[300px] ${
+            search ? "lg:w-[260px]" : ""
+          } focus:outline-none`}
+        />
         {search && (
           <button
             onClick={() => handleSearchChange("")}

@@ -19,7 +19,7 @@ export const isNotLastOnList = (index: number, listLength: number) => {
 export const getSuggestionConfig = () => ({
   service: {
     title: "text-primary-800 text-sm font-bold",
-    bg: "bg-primary-50",
+    bg: "bg-primary-50 ",
     little: "text-secondary-500",
     btn: "bg-primary-400 ",
   },
@@ -34,28 +34,39 @@ export const getSuggestionConfig = () => ({
     bg: "bg-primary-600 lg:pl-0",
     little: "text-neutral-100",
     btn: "",
-  },
+  }, all:{
+    title: "",
+    bg: "",
+    little: "",
+    btn: "",
+  }
 });
 
 export const getTopSectionConfig = () => ({
   service: {
-    title: "text-primary-800 text-md md:text-5xl",
-    bg: "bg-neutral-100",
+    title: "text-primary-800 text-md md:text-5xl md:max-w-[528px] lg:max-w-[440px]",
+    bg: "bg-neutral-100 lg:pl-[240px] lg:w-[50%]",
     little: "text-secondary-500 ",
     btn: "bg-primary-400",
   },
   home: {
-    title: "text-neutral-50",
-    bg: "",
+    title: "text-neutral-50 md:max-w-[528px] lg:max-w-[440px]",
+    bg: "lg:pl-[240px] lg:w-[50%]",
     little: "text-neutral-100 lg:hidden md:text-center ",
     btn: "bg-primary-700",
   },
   search: {
     title: "text-primary-800 text-[28px]",
-    bg: "lg:mx-auto lg:max-w-5xl",
-    little: "text-primary-800",
+    bg: "lg:mx-auto lg:max-w-5xl lg:pl-20",
+    little: "text-primary-800 lg:text-left",
     btn: "bg-primary-400",
   },
+  all:{
+    title: "text- ",
+    bg: "lg:mx-auto lg:max-w-5xl lg:pl-20",
+    little: "text-[24px] lg:text-left",
+    btn: "bg-primary-400",
+  }
 });
 
 export const buildReferenceUrl = (

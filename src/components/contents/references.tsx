@@ -11,15 +11,15 @@ type RefrencesProp = {
 
 const References = ({ items }: RefrencesProp) => {
   return (
-    <div className="h-auto px-4 pt-6 pb-10 -mb-6 lg:py-20  lg:mx-auto  lg:max-w-5xl">
+    <div className="h-auto px-4 pt-6 pb-10 -mb-6 md:px-10 lg:py-20 lg:px-14  lg:mx-auto  lg:max-w-5xl">
       {items?.map(({ id, page, article, __component }) => (
         <Link
           href={buildReferenceUrl(article?.slug || page?.slug, __component)}
           key={id}
-          className="flex flex-row justify-between cursor-pointer border-neutral-200 border h-auto py-3 items-center px-3 mb-6 rounded lg:max-w-2xl"
+          className="flex flex-row justify-between cursor-pointer border-neutral-200 border h-auto py-3 items-center px-4 mb-6 rounded md:max-w-[632px]"
         >
           <div className="w-11/12">
-            <h3 className="text-sm font-bold text-primary-500 active:primary-800">
+            <h3 className="text-sm font-bold text-primary-500 active:primary-800 inline-block hover:border-b hover:border-primary-600">
               {article?.title || page?.name}
             </h3>
             {(article?.description || page?.shortDescription) && (
