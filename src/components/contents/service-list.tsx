@@ -13,12 +13,12 @@ const ServiceList = ({ services }: ServiceListProp) => {
         <h4 className="text-black lg:text-mdd lg:font-medium font-medium text-xrs pb-6 md:text-xxs">
           POPULAR SERVICES
         </h4>
-        <div className="lg:flex md:flex-row md:flex md:flex-wrap justify-between">
+        <div className="lg:flex sm:flex sm:flex-row sm:flex-wrap md:flex-row md:flex md:flex-wrap justify-between">
           {services.map(({ page }, index) => (
             <Link
               href={`/services/${page?.slug}`}
               key={index}
-              className="h-[208px] md:hover:border-b-2 md:hover:border-primary-500 mb-4 md:mb-6 lg:mb-0 md:w-[48%] w-full rounded bg-neutral-100 lg:w-[222px] md:hover:bg-transparent p-4 flex flex-col justify-between active:bg-primary-50 md:active:bg-primary-50"
+              className="h-[208px] md:hover:border-b-2 md:hover:border-primary-500 mb-4 md:mb-6 lg:mb-0 sm:w-[48%] md:w-[48%] w-full rounded bg-neutral-100 lg:w-[222px] md:hover:bg-transparent p-4 flex flex-col justify-between active:bg-primary-50 md:active:bg-primary-50"
             >
               <div>
                 <h6 className="text-sm font-medium text-primary-800 md:active:text-primary-800 md:hover:text-primary-500 active:text-primary-800 md:text-lg md:font-semibold">
