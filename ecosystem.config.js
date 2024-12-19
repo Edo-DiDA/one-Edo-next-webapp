@@ -7,10 +7,7 @@ module.exports = {
       script: "./node_modules/.bin/next",
       args: "start",
       instances: "max",
-      exec_mode: "cluster",
-      env: {
-        NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL
-      },
+      exec_mode: "cluster"
     },
   ],
 };
