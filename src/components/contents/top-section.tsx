@@ -11,11 +11,11 @@ const TopSection = ({ title, body, content = "service" }: TopSectionProps) => {
   const config = getTopSectionConfig();
   return (
     <div
-      className={`h-auto px-4 pt-4 lg:h-[344px] md:w-full md:flex md:flex-row md:justify-center md:pt-4 lg:w-[50%] lg:flex lg:justify-start lg:pl-[240px] lg:items-center lg:flex-row ${config[content].bg}`}
+      className={`h-auto px-4 pt-4 lg:h-[344px] md:w-full md:flex md:flex-row md:justify-center md:pt-4  lg:flex lg:justify-start  lg:items-center lg:flex-row ${config[content].bg}`}
     >
       <div className="">
         <h2
-          className={`text-xxl text-center font-bold md:text-center md:text-xxxl lg:text-xl lg:text-left md:max-w-[528px] lg:max-w-[440px] ${config[content].title}`}
+          className={`text-xxl text-center font-bold md:text-center md:text-xxxl lg:text-xl lg:text-left  ${config[content].title}`}
         >
           {title}
         </h2>

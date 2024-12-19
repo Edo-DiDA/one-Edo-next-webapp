@@ -24,7 +24,7 @@ const Suggestions = ({
 
   return (
     <div
-      className={`px-4 py-4 lg:px-0 md:flex md:justify-center lg:py-0 lg:flex-1 lg:h-[344px] md:mt-4 lg:mt-0 md:mb-4 lg:mb-0 lg:flex lg:items-start lg:flex-col lg:justify-center ${config[pageType].bg}`}
+      className={`px-4 py-4 lg:px-10 md:flex md:justify-center lg:py-0 lg:flex-1 lg:h-[344px] md:mt-4 lg:mt-0 md:mb-4 lg:mb-0 lg:flex lg:items-start lg:flex-col lg:justify-center  ${config[pageType].bg}`}
     >
       {showTitle && (
         <h6 className={`mb-3 ${config[pageType].title}`}>{title}</h6>
@@ -41,7 +41,7 @@ const Suggestions = ({
           <button
             key={index}
             onClick={() => router.push(`/articles/${page?.slug}`)}
-            className={`h-[40px] rounded ${config[pageType].btn} px-3 text-neutral-50 mr-3 mb-3 truncate border border-transparent   active:bg-primary-500`}
+            className={`h-[40px] rounded ${config[pageType].btn} px-3 text-neutral-50 mr-3 mb-3 truncate border border-transparent   active:bg-primary-500 hover:border-primary-200 active:border-primary-200`}
           >
             {title}
           </button>

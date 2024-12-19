@@ -36,7 +36,7 @@ const ServicesPage = async ({ params }: ArticlesPageProps) => {
         <AudienceInfo content={whoisthisfor} />
       </div>
 
-      <div className="md:flex md:gap-2 md:py-20 lg:pl-20 xl:pl-0 max-w-5xl  mx-auto">
+      <div className="md:flex md:gap-6 md:py-20 lg:pl-20 xl:pl-0 max-w-5xl  mx-auto">
         <div className="md:w-[50%]">
           <div className="py-6 px-4 border-b border-neutral-200">
             <p className="text-md text-primary-800 font-bold pb-3">

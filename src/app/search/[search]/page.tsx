@@ -11,7 +11,7 @@ type SearchPageProps = {
 const Page = async ({ params }: SearchPageProps) => {
   const { search } = await params;
   const data = await getSearch(search);
-
+  console.log(data);
   return (
     <div>
       <div className="md:hidden h-[64px]"></div>

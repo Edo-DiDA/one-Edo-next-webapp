@@ -15,6 +15,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'md-lg': '896px',
+        'sm-xl': '1100px',},
       typography: {
         DEFAULT: {
           color: "#333",

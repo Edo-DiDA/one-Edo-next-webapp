@@ -25,7 +25,7 @@ const Home = async () => {
           subHeader={content?.shortDescription || ""}
         />
       </div>
-      <ServiceList services={content?.submenus} />
+      <ServiceList popular services={content?.submenus} />
       <Footer />
     </ContentLayout>
   );

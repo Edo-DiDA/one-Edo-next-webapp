@@ -17,7 +17,7 @@ export type HighlightItem = {
 
 // APIs
 
-export type PageContent = "home" | "service" | "search";
+export type PageContent = "home" | "service" | "search"|"all";
 
 export type PageContributors = {
   id: number;
