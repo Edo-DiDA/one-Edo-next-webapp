@@ -9,7 +9,7 @@ import {
   SubmenuType,
 } from "@/types/content";
 
-const baseUrl = "https://content.oneedo.ng/api";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://content.oneedo.ng/api";
 
 const payload =
   "populate[submenus][on][shared.service-page][populate][page][fields][0]=name&populate[submenus][on][shared.service-page][populate][page][fields][1]=description&populate[submenus][on][shared.service-page][populate][page][fields][2]=slug&populate[submenus][on][shared.service-page][populate][page][fields][3]=shortDescription&populate[submenus][on][shared.article][populate][article][fields][0]=title&populate[submenus][on][shared.article][populate][article][fields][1]=description&populate[submenus][on][shared.article][populate][article][fields][2]=slug&populate[breadcrumbs][populate][page][fields][0]=name&populate[breadcrumbs][populate][page][fields][1]=slug&populate[popularsuggestion][populate][page][fields][0]=title&populate[popularsuggestion][populate][page][fields][1]=slug";
