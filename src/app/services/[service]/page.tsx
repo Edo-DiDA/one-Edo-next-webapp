@@ -1,8 +1,8 @@
 import Footer from "@/components/component/footer";
 import Breadcrumbs from "@/components/contents/breadcrumbs";
 import References from "@/components/contents/references";
-import Suggestions from "@/components/contents/suggestions";
-import TopSection from "@/components/contents/top-section";
+import ServiceSuggestions from "@/components/contents/service-suggestions";
+import SerivcesTopSection from "@/components/contents/service-top-section";
 import { getPageFromSlug } from "@/lib/functions/get-service";
 
 type ServicePageProps = {
@@ -16,17 +16,15 @@ const ServicesPage = async ({ params }: ServicePageProps) => {
   return (
     <>
       <div className="">
-        <div className="max-w-5xl mx-auto ">
-          {content?.breadcrumbs?.length > 0 && (
-            <Breadcrumbs items={content.breadcrumbs} />
-          )}
-        </div>
+        {content?.breadcrumbs?.length > 0 && (
+          <Breadcrumbs items={content.breadcrumbs} />
+        )}
         <div className="lg:flex">
-          <TopSection
+          <SerivcesTopSection
             title={content.description}
             body={content.shortDescription || ""}
           />
-          <Suggestions items={content?.popularsuggestion} />
+          <ServiceSuggestions items={content?.popularsuggestion} />
         </div>
         <References showNew items={content?.submenus} />
       </div>

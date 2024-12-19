@@ -43,6 +43,8 @@ const config: Config = {
         md: ["1.25rem", { lineHeight: "1.75rem" }],
         mdd: ["1.375rem", { lineHeight: "1.65rem" }],
         lg: ["1.5rem", { lineHeight: "1.5rem" }],
+        mlg: ["1.75rem", { lineHeight: "2.1rem" }], //28px
+        "2xs": ["2rem", { lineHeight: "2.4rem" }], //32px
         xl: ["3rem", { lineHeight: "3.625rem" }], //48px
         xxl: ["2.25rem", { lineHeight: "3.625rem" }], //36px
         xxxl: ["2.5rem", { lineHeight: "3rem" }], //40px
@@ -110,6 +112,13 @@ const config: Config = {
         },
         "top-search": "#4C6D5D",
       },
+    },
+    screens: {
+      sm: "360px",
+      md: "560px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
     },
     plugins: [],
   },
