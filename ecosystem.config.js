@@ -4,7 +4,7 @@ module.exports = {
       name: "oneedoweb",
       script: "./node_modules/.bin/next",
       args: "start",
-      instances: "max",
+      instances: "1",
       exec_mode: "cluster"
     },
   ],
