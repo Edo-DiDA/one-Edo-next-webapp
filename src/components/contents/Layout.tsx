@@ -2,6 +2,7 @@ import Header from "@/components/component/header";
 import { getServices } from "@/lib/functions/get-service";
 import FooterButton from "./footer-button";
 import SearchBar from "./search-bar";
+import Banner from "../component/banner";
 
 type ContentLayoutProp = {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ const ContentLayout = async ({ children }: ContentLayoutProp) => {
 
   return (
     <div className="relative bg-neutral-50">
+      <Banner />
       <div className="sticky lg:h-[80px] top-0 lg:flex lg:justify-center lg:flex-row left-0 right-0 bg-primary-600 pb-2 lg:pb-0">
         <div className="px-4 md:flex lg:h-[100%] lg:px-0 md:w-[100%] md:px-[40px] lg:max-w-[960px] md:flex-col lg:flex-row md:justify-between">
           <Header links={data} />

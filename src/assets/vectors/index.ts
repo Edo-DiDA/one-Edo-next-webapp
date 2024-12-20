@@ -17,6 +17,8 @@ import ArrowRightWhite from "./ArrowRightWhite.svg";
 import ArrowLeftGreen from "./ArrowLeftGreen.svg";
 import ChevronDownWhite from "./ChevronDownWhite.svg";
 import ArrowRightDeepGreen from "./ArrowRightDeepGreen.svg";
+import Close from "./Close.svg";
+
 
 export {
   Logo,
@@ -38,4 +40,5 @@ export {
   WhiteMagLens,
   ArrowUpWhite,
   ArrowRightDeepGreen,
+  Close,
 };

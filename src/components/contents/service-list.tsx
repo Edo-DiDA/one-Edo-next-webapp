@@ -1,12 +1,17 @@
+"use client";
 import Link from "next/link";
 import { SubmenuType } from "@/types/content";
 import { ArrowRightDeepGreen, ArrowRightGreen } from "@/assets/vectors";
+import { useRouter } from "next/navigation";
 
 type ServiceListProp = {
   services: SubmenuType[];
+  popular?: boolean;
 };
 
-const ServiceList = ({ services }: ServiceListProp) => {
+const ServiceList = ({ services, popular }: ServiceListProp) => {
+  const router = useRouter();
+
   return (
     <div className="pt-6 mb-16 mx-4 md:mx-10 lg:flex lg:justify-center">
       <div className="lg:max-w-[960px]">
@@ -39,6 +44,16 @@ const ServiceList = ({ services }: ServiceListProp) => {
             </Link>
           ))}
         </div>
+        {popular && (
+          <div className="mx-auto max-w-[180px] pt-10">
+            <button
+              onClick={() => router.push(`/services/all`)}
+              className={`h-[40px] rounded  px-3 text-primary-500 mr-3 mb-3  border border-primary-500 text-center `}
+            >
+              View all services
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
