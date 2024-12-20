@@ -1,25 +1,24 @@
+import Footer from "@/components/component/footer";
 import ServiceList from "@/components/contents/service-list";
-import TopSection from "@/components/contents/top-section";
 import { getPageFromSlug } from "@/lib/functions/get-service";
+import AllSerivcesTopSection from "@/components/contents/all-services-top";
 
-type AllServicePageProps = {
-  params: Promise<{ service: string }>;
-};
 export const revalidate = 3;
 
-const AllServicesPage = async ({ params }: AllServicePageProps) => {
+const AllServicesPage = async () => {
   const content = await getPageFromSlug("home");
   console.log({ content });
   return (
     <>
       <div className="bg-primary-600 text-white ">
-        <TopSection
+        <AllSerivcesTopSection
           title="Browse all available services"
-          body={` ${content?.submenus?.length} services`}
+          body={`${content?.submenus?.length} services`}
           content="all"
         />
       </div>
       <ServiceList services={content?.submenus} />
+      <Footer />
     </>
   );
 };
