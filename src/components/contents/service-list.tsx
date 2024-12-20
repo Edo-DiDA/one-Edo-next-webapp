@@ -15,9 +15,11 @@ const ServiceList = ({ services, popular }: ServiceListProp) => {
   return (
     <div className="pt-6 mb-16 mx-4 md:mx-10 lg:flex lg:justify-center">
       <div className="lg:max-w-[960px]">
-        <h4 className="text-black lg:text-mdd lg:font-medium font-medium text-xrs pb-6 md:text-xxs">
-          POPULAR SERVICES
-        </h4>
+        {popular && (
+          <h4 className="text-black lg:text-mdd lg:font-medium font-medium text-xrs pb-6 md:text-xxs">
+            POPULAR SERVICES
+          </h4>
+        )}
         <div className="lg:flex lg:-mb-6 sm:flex sm:flex-row sm:flex-wrap md:flex-row md:flex md:flex-wrap justify-between">
           {services.map(({ page }, index) => (
             <Link
