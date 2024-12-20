@@ -16,7 +16,7 @@ const ServiceList = ({ services, popular }: ServiceListProp) => {
     <div className="pt-6 mb-16 lg:mx-[240px] mx-4 md:mx-10">
       <div className="">
         {popular && (
-          <h4 className="text-black font-medium text-xrs pb-6 md:text-xxs">
+          <h4 className="text-black lg:text-mdd lg:font-medium font-medium text-xrs pb-6 md:text-xxs">
             POPULAR SERVICES
           </h4>
         )}
