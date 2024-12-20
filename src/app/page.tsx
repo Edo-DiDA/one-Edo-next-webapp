@@ -27,7 +27,7 @@ const Home = async () => {
           />
         </div>
       </div>
-      <ServiceList services={content?.submenus} />
+      <ServiceList popular services={content?.submenus} />
       <Footer />
     </ContentLayout>
   );
