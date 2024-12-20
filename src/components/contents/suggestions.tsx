@@ -24,7 +24,7 @@ const Suggestions = ({
 
   return (
     <div
-      className={`px-4 py-4 lg:px-0 md:flex md:justify-center lg:py-0 lg:flex-1 lg:h-[344px] md:mt-4 lg:mt-0 md:mb-4 lg:mb-0 lg:flex lg:items-start lg:flex-col lg:justify-center ${config[pageType].bg}`}
+      className={`px-4 py-4 lg:px-0 md:flex md:justify-center lg:py-0 md:mt-4 lg:mt-0 md:mb-4 lg:mb-0 lg:w-[50%] lg:flex lg:items-start lg:flex-col lg:justify-center ${config[pageType].bg}`}
     >
       {showTitle && (
         <h6 className={`mb-3 ${config[pageType].title}`}>{title}</h6>

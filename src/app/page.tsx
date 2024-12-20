@@ -12,18 +12,20 @@ const Home = async () => {
 
   return (
     <ContentLayout>
-      <div className="lg:flex bg-primary-600">
-        <TopSection
-          content="home"
-          title={content?.description}
-          body={content?.shortDescription || ""}
-        />
-        <Suggestions
-          showTitle={false}
-          pageType="home"
-          items={content?.popularsuggestion}
-          subHeader={content?.shortDescription || ""}
-        />
+      <div className="lg:flex justify-center lg:w-full lg:h-auto bg-primary-600">
+        <div className="lg:max-w-[960px] border-red lg:w-full lg:flex lg:flex-row">
+          <TopSection
+            content="home"
+            title={content?.description}
+            body={content?.shortDescription || ""}
+          />
+          <Suggestions
+            showTitle={false}
+            pageType="home"
+            items={content?.popularsuggestion}
+            subHeader={content?.shortDescription || ""}
+          />
+        </div>
       </div>
       <ServiceList services={content?.submenus} />
       <Footer />
