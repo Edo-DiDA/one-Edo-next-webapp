@@ -7,7 +7,6 @@ export const revalidate = 3;
 
 const AllServicesPage = async () => {
   const content = await getPageFromSlug("home");
-  console.log({ content });
   return (
     <>
       <div className="bg-primary-600 text-white ">
