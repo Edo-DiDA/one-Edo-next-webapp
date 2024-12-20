@@ -35,6 +35,12 @@ export const getSuggestionConfig = () => ({
     little: "text-neutral-100",
     btn: "",
   },
+  all:{
+    title: "",
+    bg: "",
+    little: "",
+    btn: "",
+  }
 });
 
 export const getTopSectionConfig = () => ({
@@ -56,6 +62,12 @@ export const getTopSectionConfig = () => ({
     little: "text-primary-800",
     btn: "bg-primary-400",
   },
+  all:{
+    title: "",
+    bg: " lg:mx-auto lg:max-w-5xl ",
+    little: "",
+    btn: "",
+  }
 });
 
 export const buildReferenceUrl = (
