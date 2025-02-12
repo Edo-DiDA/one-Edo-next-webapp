@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
-import { SubmenuType } from "@/types/content";
+import { PageType, SubmenuType } from "@/types/content";
 import { ArrowRightDeepGreen, ArrowRightGreen } from "@/assets/vectors";
 import { useRouter } from "next/navigation";
 
 type ServiceListProp = {
-  services: SubmenuType[];
+  services: PageType[];
   popular?: boolean;
 };
 
@@ -14,18 +14,18 @@ const ServiceList = ({ services, popular }: ServiceListProp) => {
 
   return (
     <div className="pt-6 mb-16 mx-4 md:mx-10 lg:flex lg:justify-center">
-      <div className="lg:max-w-[960px]">
+      <div className="lg:w-[960px]">
         {popular && (
           <h4 className="text-black lg:text-mdd lg:font-medium font-medium text-xrs pb-6 md:text-xxs">
             POPULAR SERVICES
           </h4>
         )}
-        <div className="lg:flex lg:-mb-6 sm:flex sm:flex-row sm:flex-wrap md:flex-row md:flex md:flex-wrap justify-between">
-          {services.map(({ page }, index) => (
+        <div className="lg:flex lg:flex-row lg:-mb-6 sm:flex sm:flex-row sm:flex-wrap md:flex-row md:flex md:flex-wrap lg:justify-start lg:gap-x-6  justify-between">
+          {services.map((page, index) => (
             <Link
               href={`/services/${page?.slug}`}
               key={index}
-              className="h-[208px] lg:mb-6 md:hover:border-b-2 md:hover:border-primary-500 mb-4 md:mb-6 lg:mb-0 sm:w-[48%] md:w-[48%] w-full rounded bg-neutral-100 lg:w-[222px] md:hover:bg-transparent p-4 flex flex-col justify-between active:bg-primary-50 md:active:bg-primary-50"
+              className="h-[208px] overflow-hidden lg:mb-6 md:hover:border-b-2 md:hover:border-primary-500 mb-4 md:mb-6 lg:mb-0 sm:w-[48%] md:w-[48%] w-full rounded bg-neutral-100 lg:w-[222px] md:hover:bg-transparent p-4 flex flex-col justify-between active:bg-primary-50 md:active:bg-primary-50"
             >
               <div>
                 <h6 className="text-sm font-medium text-primary-800 md:active:text-primary-800 md:hover:text-primary-500 active:text-primary-800 md:text-lg md:font-semibold">

@@ -1,5 +1,5 @@
 import Header from "@/components/component/header";
-import { getServices } from "@/lib/functions/get-service";
+import { getServices, getSubMenus } from "@/lib/functions/get-service";
 import FooterButton from "./footer-button";
 import SearchBar from "./search-bar";
 import Banner from "../component/banner";
@@ -9,7 +9,7 @@ type ContentLayoutProp = {
 };
 
 const ContentLayout = async ({ children }: ContentLayoutProp) => {
-  const data = await getServices();
+  const data = await getSubMenus(true);
 
   return (
     <div className="relative bg-neutral-50">
