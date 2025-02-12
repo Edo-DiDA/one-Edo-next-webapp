@@ -5,6 +5,7 @@ import remarkHeadingId from "remark-heading-id";
 import {
   ArticleType,
   ContentType,
+  PageType,
   SearchType,
   SubmenuType,
 } from "@/types/content";
@@ -19,6 +20,17 @@ const articlesPayload =
 
 export const getPageFromSlug = async (slug: string): Promise<ContentType> => {
   const url = `${baseUrl}/categories/${slug}?${payload}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  return data.data;
+};
+
+export const getSubMenus = async (isFiltered: boolean): Promise<PageType[]> => {
+  const fiterString =
+    "sort[0]=name:asc&filters[featured][$eq]=true&pagination[pageSize]=4&pagination[page]=1";
+  const url = isFiltered
+    ? `${baseUrl}/categories?${fiterString}`
+    : `${baseUrl}/categories`;
   const res = await fetch(url);
   const data = await res.json();
   return data.data;
