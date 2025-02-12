@@ -6,13 +6,13 @@ import { usePathname, useRouter } from "next/navigation";
 
 import { ChevronDownWhite, Logo } from "@/assets/vectors";
 import { EdoLogo } from "@/assets/images";
-import { ContentType, SubmenuType } from "@/types/content";
+import { ContentType, PageType, SubmenuType } from "@/types/content";
 
 import MenuButton from "../contents/menu-button";
 import { getPageFromSlug } from "@/lib/functions/get-service";
 
 type HeaderProps = {
-  links: SubmenuType[];
+  links: PageType[];
 };
 
 const Header = ({ links }: HeaderProps) => {
@@ -95,9 +95,9 @@ const Header = ({ links }: HeaderProps) => {
             >
               <div className="bg-primary-50 relative w-[50%] pb-5 p-2">
                 <div className="flex flex-col text-primary-800">
-                  {links.map(({ id, page }) => (
+                  {links.map((page, index) => (
                     <Link
-                      key={id}
+                      key={index}
                       href={`/services/${page?.slug}`}
                       className="py-4 px-6 text-left hover:bg-primary-800 hover:text-white rounded-md"
                       onMouseEnter={() =>
@@ -142,8 +142,8 @@ const Header = ({ links }: HeaderProps) => {
           <nav className="absolute top-24 left-0 right-0 bg-primary-600 max-h-[80vh] overflow-y-scroll px-4 pb-5 shadow-lg z-40 text-white">
             <p className="text-neutral-50 text-xs font-medium py-4">Services</p>
             <ul className="flex flex-col">
-              {links.map(({ id, page }) => (
-                <li key={id} className="py-3">
+              {links.map((page, index) => (
+                <li key={index} className="py-3">
                   <Link
                     href={`/services/${page?.slug}`}
                     className="hover:underline focus:underline"
