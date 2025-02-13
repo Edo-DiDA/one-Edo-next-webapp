@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { PageType, SubmenuType } from "@/types/content";
+import { PageType } from "@/types/content";
 import { ArrowRightDeepGreen, ArrowRightGreen } from "@/assets/vectors";
 import { useRouter } from "next/navigation";
 

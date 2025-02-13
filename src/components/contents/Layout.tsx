@@ -1,5 +1,5 @@
 import Header from "@/components/component/header";
-import { getServices, getSubMenus } from "@/lib/functions/get-service";
+import { getSubMenus } from "@/lib/functions/get-service";
 import FooterButton from "./footer-button";
 import SearchBar from "./search-bar";
 import Banner from "../component/banner";
