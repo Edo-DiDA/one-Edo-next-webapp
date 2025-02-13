@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 import { ChevronDownWhite, Logo } from "@/assets/vectors";
 import { EdoLogo } from "@/assets/images";
-import { ContentType, PageType, SubmenuType } from "@/types/content";
+import { ContentType, PageType } from "@/types/content";
 
 import MenuButton from "../contents/menu-button";
 import { getPageFromSlug } from "@/lib/functions/get-service";
