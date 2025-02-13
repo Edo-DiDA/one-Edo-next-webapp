@@ -7,16 +7,19 @@ export const revalidate = 3;
 
 const AllServicesPage = async () => {
   const content = await getSubMenus(false);
+  const filtered = content.filter(
+    (service) => service.name.toLowerCase() !== "home"
+  );
   return (
     <>
       <div className="bg-primary-600 text-white ">
         <AllSerivcesTopSection
           title="Browse all available services"
-          body={`${content?.length} services`}
+          body={`${filtered?.length} services`}
           content="all"
         />
       </div>
-      <ServiceList services={content} />
+      <ServiceList services={filtered} />
       <Footer />
     </>
   );
