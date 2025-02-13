@@ -1,6 +1,6 @@
 import Footer from "@/components/component/footer";
 import ServiceList from "@/components/contents/service-list";
-import { getPageFromSlug, getSubMenus } from "@/lib/functions/get-service";
+import { getSubMenus } from "@/lib/functions/get-service";
 import AllSerivcesTopSection from "@/components/contents/all-services-top";
 
 export const revalidate = 3;
