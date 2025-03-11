@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
-import { PageType } from "@/types/content";
+import { SubmenuType } from "@/types/content";
 import { ArrowRightDeepGreen, ArrowRightGreen } from "@/assets/vectors";
 import { useRouter } from "next/navigation";
 
 type ServiceListProp = {
-  services: PageType[];
+  services: SubmenuType[];
+  // services: PageType[];
   popular?: boolean;
 };
 
@@ -21,7 +22,7 @@ const ServiceList = ({ services, popular }: ServiceListProp) => {
           </h4>
         )}
         <div className="lg:flex lg:flex-row lg:-mb-6 sm:flex sm:flex-row sm:flex-wrap md:flex-row md:flex md:flex-wrap lg:justify-start lg:gap-x-6  justify-between">
-          {services.map((page, index) => (
+          {services.map(({ page }, index) => (
             <Link
               href={`/services/${page?.slug}`}
               key={index}

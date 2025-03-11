@@ -4,6 +4,7 @@ import {
   HighlightItem,
   PageContributors,
   RelatedPages,
+  SubmenuType,
 } from "@/types/content";
 
 export const isNotLastOnList = (index: number, listLength: number) => {
@@ -35,12 +36,12 @@ export const getSuggestionConfig = () => ({
     little: "text-neutral-100",
     btn: "",
   },
-  all:{
+  all: {
     title: "",
     bg: "",
     little: "",
     btn: "",
-  }
+  },
 });
 
 export const getTopSectionConfig = () => ({
@@ -62,12 +63,12 @@ export const getTopSectionConfig = () => ({
     little: "text-primary-800",
     btn: "bg-primary-400",
   },
-  all:{
+  all: {
     title: "",
     bg: " lg:mx-auto lg:max-w-5xl ",
     little: "",
     btn: "",
-  }
+  },
 });
 
 export const buildReferenceUrl = (
@@ -114,4 +115,8 @@ export const transformContributorsToHighlight = (
     title: contributor?.name,
     link: contributor.website || "",
   }));
+};
+
+export const reduceHomeToFour = (arr: SubmenuType[]) => {
+  return arr.length > 4 ? arr.slice(0, 4) : arr;
 };
