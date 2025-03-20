@@ -22,7 +22,7 @@ const Banner = () => {
             We are actively fine-tuning this platform and adding more services.{" "}
             <a
               href="https://forms.gle/aXEWon6A8DkPYMqB8"
-              target="blank"
+              target="_blank"
               className="underline text-white hover:text-gray-300"
             >
               Tell us what you think here
