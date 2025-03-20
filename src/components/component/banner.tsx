@@ -20,7 +20,11 @@ const Banner = () => {
           </span>
           <p>
             We are actively fine-tuning this platform and adding more services.{" "}
-            <a href="#" className="underline text-white hover:text-gray-300">
+            <a
+              href="https://forms.gle/aXEWon6A8DkPYMqB8"
+              target="blank"
+              className="underline text-white hover:text-gray-300"
+            >
               Tell us what you think here
             </a>
           </p>
