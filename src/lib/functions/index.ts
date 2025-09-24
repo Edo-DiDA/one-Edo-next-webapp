@@ -100,11 +100,13 @@ export const processBreadcrumbs = (arr: BreadcrumbType[]): BreadcrumbType[] => {
 export const transformArticleToHighlight = (
   articles: RelatedPages[]
 ): HighlightItem[] => {
-  return articles.map(({ article }) => ({
-    id: article?.documentId,
-    title: article?.title,
-    link: article.slug ? `/articles/${article.slug}` : undefined,
-  }));
+  return articles
+    .filter(({ article }) => !!article)
+    .map(({ article }) => ({
+      id: article?.documentId,
+      title: article?.title,
+      link: article?.slug ? `/articles/${article.slug}` : undefined,
+    }));
 };
 
 export const transformContributorsToHighlight = (
